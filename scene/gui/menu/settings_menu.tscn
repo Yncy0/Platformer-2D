@@ -85,7 +85,7 @@ vertical_alignment = 1
 [node name="SFXSlider" parent="Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_4tlt0")]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="BackButton" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_0mj4u")
