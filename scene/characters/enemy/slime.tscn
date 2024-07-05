@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cf83jtxnvs012"]
 
-[ext_resource type="PackedScene" uid="uid://c1we2whqy5r26" path="res://scene/characters/enemy/grounded_enemy.tscn" id="1_bs84u"]
+[ext_resource type="PackedScene" uid="uid://c1we2whqy5r26" path="res://scene/characters/enemy/_grounded_enemy.tscn" id="1_bs84u"]
 [ext_resource type="Texture2D" uid="uid://c7llwb5hvy6il" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="2_fcko2"]
 [ext_resource type="PackedScene" uid="uid://haxrple0mnhl" path="res://scene/components/hurtbox.tscn" id="3_8frow"]
 
