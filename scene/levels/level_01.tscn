@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dksswba8ci81m"]
+[gd_scene load_steps=4 format=3 uid="uid://dksswba8ci81m"]
 
 [ext_resource type="TileSet" uid="uid://b0yrhl5jscbfa" path="res://scene/levels/tileset01.tres" id="1_hnayi"]
 [ext_resource type="PackedScene" uid="uid://beqmqsni2pina" path="res://scene/characters/player/_player.tscn" id="2_ai7ew"]
+[ext_resource type="PackedScene" uid="uid://cy5n63m5wv4n2" path="res://scene/gui/menu/pause_menu.tscn" id="3_dcra0"]
 
 [node name="Level01" type="Node2D"]
 
@@ -22,8 +23,6 @@ position = Vector2(120, 431)
 collision_layer = 2
 collision_mask = 9
 
-[connection signal="body_entered" from="TileMap/Coins" to="TileMap/Coins" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@329771" to="TileMap/@Area2D@329771" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@329772" to="TileMap/@Area2D@329772" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@329773" to="TileMap/@Area2D@329773" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@329774" to="TileMap/@Area2D@329774" method="_on_body_entered"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_dcra0")]

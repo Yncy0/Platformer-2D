@@ -1,17 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://cy5n63m5wv4n2"]
+[gd_scene load_steps=4 format=3 uid="uid://cy5n63m5wv4n2"]
 
+[ext_resource type="Script" path="res://script/gui/menu/pause_menu.gd" id="1_cfb86"]
 [ext_resource type="FontFile" uid="uid://dmb0vqloyhf3f" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="1_rkwso"]
 [ext_resource type="PackedScene" uid="uid://dvqvfg8nxu114" path="res://scene/gui/menu/settings_menu.tscn" id="2_00yht"]
 
 [node name="PauseMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cfb86")
 
 [node name="PausePanel" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,22 +23,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="PausePanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -160.0
+offset_top = -167.0
+offset_right = 160.0
+offset_bottom = 167.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="PausePanel/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_rkwso")
 theme_override_font_sizes/font_size = 64
@@ -42,21 +46,21 @@ text = "PAUSE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="PausePanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_rkwso")
 theme_override_font_sizes/font_size = 32
 text = "SETTINGS"
 
-[node name="BackButton" type="Button" parent="VBoxContainer"]
+[node name="BackButton" type="Button" parent="PausePanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_rkwso")
 theme_override_font_sizes/font_size = 32
 text = "BACK"
 
-[node name="ExitButton" type="Button" parent="VBoxContainer"]
+[node name="ExitButton" type="Button" parent="PausePanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_rkwso")
