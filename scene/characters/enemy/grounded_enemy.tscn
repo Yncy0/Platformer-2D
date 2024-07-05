@@ -6,3 +6,5 @@
 [node name="GroundedEnemy" instance=ExtResource("1_m2do0")]
 script = ExtResource("2_ska5p")
 SPEED = 0.0
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="3"]

@@ -49,6 +49,7 @@ _data = {
 size = Vector2(10, 4.5)
 
 [node name="Slime" instance=ExtResource("1_bs84u")]
+SPEED = 50.0
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(0, -4)
