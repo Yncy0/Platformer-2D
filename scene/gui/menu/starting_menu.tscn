@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c43rjcqowbetk"]
+[gd_scene load_steps=5 format=3 uid="uid://c43rjcqowbetk"]
 
+[ext_resource type="Script" path="res://script/gui/menu/starting_menu.gd" id="1_khvbr"]
 [ext_resource type="TileSet" uid="uid://b0yrhl5jscbfa" path="res://scene/levels/tileset01.tres" id="1_pif5q"]
 [ext_resource type="Texture2D" uid="uid://df7ku1wr285ub" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="2_tsh5v"]
 [ext_resource type="FontFile" uid="uid://dmb0vqloyhf3f" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="5_bqo82"]
@@ -13,6 +14,7 @@ offset_left = 5.0
 offset_right = 5.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_khvbr")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_pif5q")
@@ -48,7 +50,7 @@ theme_override_fonts/font = ExtResource("5_bqo82")
 theme_override_font_sizes/font_size = 48
 text = "Brackeys Platformer"
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -56,10 +58,12 @@ theme_override_fonts/font = ExtResource("5_bqo82")
 theme_override_font_sizes/font_size = 32
 text = "Start"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("5_bqo82")
 theme_override_font_sizes/font_size = 32
 text = "Settings"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
