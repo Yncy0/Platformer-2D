@@ -13,10 +13,10 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 	
 
-	var direction := Vector2(1, 0)
+	var direction = 1
 	
 	if is_on_wall():
-		direction = Vector2(-1, 0)
+		direction = -1
 	
 	if direction:
 		velocity.x = direction * SPEED
@@ -25,3 +25,8 @@ func _physics_process(delta: float) -> void:
 		
 
 	move_and_slide()
+
+
+func _on_hurtbox_body_entered(body: Node2D) -> void:
+	if body is Player:
+		self.queue_free()
