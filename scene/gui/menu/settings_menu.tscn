@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvqvfg8nxu114"]
+[gd_scene load_steps=4 format=3 uid="uid://dvqvfg8nxu114"]
 
 [ext_resource type="FontFile" uid="uid://dmb0vqloyhf3f" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="1_0mj4u"]
+[ext_resource type="Script" path="res://script/gui/menu/settings_menu.gd" id="1_bd2fq"]
 [ext_resource type="PackedScene" uid="uid://c5l1ttky5e5fx" path="res://scene/gui/menu/volume_slider.tscn" id="2_4tlt0"]
 
 [node name="SettingsMenu" type="Control"]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bd2fq")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -91,3 +93,5 @@ size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_0mj4u")
 theme_override_font_sizes/font_size = 32
 text = "BACK"
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
