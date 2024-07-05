@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Brackeys Platformer"
-run/main_scene="res://scene/levels/level_01.tscn"
+run/main_scene="res://scene/gui/menu/starting_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
