@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1we2whqy5r26"]
+
+[ext_resource type="PackedScene" uid="uid://buvvmbfjfuhxv" path="res://scene/characters/enemy/enemy.tscn" id="1_m2do0"]
+[ext_resource type="Script" path="res://script/characters/enemy/grounded_enemy.gd" id="2_ska5p"]
+
+[node name="GroundedEnemy" instance=ExtResource("1_m2do0")]
+script = ExtResource("2_ska5p")
+SPEED = 0.0

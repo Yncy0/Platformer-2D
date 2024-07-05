@@ -1,7 +1,8 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://b0yrhl5jscbfa"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://b0yrhl5jscbfa"]
 
 [ext_resource type="Texture2D" uid="uid://5usctshlve13" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="1_hxxvy"]
 [ext_resource type="Texture2D" uid="uid://c3xomxff5cf48" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_w6o1t"]
+[ext_resource type="PackedScene" uid="uid://cf83jtxnvs012" path="res://scene/characters/enemy/slime.tscn" id="3_cesv2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xl4bb"]
 texture = ExtResource("1_hxxvy")
@@ -465,7 +466,11 @@ texture = ExtResource("2_w6o1t")
 3:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:15/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_vv4xq"]
+scenes/2/scene = ExtResource("3_cesv2")
+
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xl4bb")
 sources/1 = SubResource("TileSetAtlasSource_fjtay")
+sources/2 = SubResource("TileSetScenesCollectionSource_vv4xq")
