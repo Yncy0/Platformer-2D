@@ -1,5 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://c41tgwcyem62e"]
+[gd_scene load_steps=6 format=3 uid="uid://c41tgwcyem62e"]
 
 [ext_resource type="PackedScene" uid="uid://buy5lisiipvtj" path="res://scene/pickups/_pickups.tscn" id="1_dpkgy"]
+[ext_resource type="Script" path="res://script/pickups/coins.gd" id="2_6crpk"]
+[ext_resource type="Texture2D" uid="uid://2w5yi2f862wy" path="res://assets/brackeys_platformer_assets/sprites/coin.png" id="2_8rku0"]
+[ext_resource type="AudioStream" uid="uid://b62si2286qkkv" path="res://assets/brackeys_platformer_assets/sounds/coin.wav" id="3_jmksx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bxjp7"]
+radius = 6.0
 
 [node name="Coins" instance=ExtResource("1_dpkgy")]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("2_6crpk")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_8rku0")
+hframes = 12
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_bxjp7")
+
+[node name="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("3_jmksx")
+
+[node name="AnimationPlayer" parent="." index="3"]
+autoplay = "idle"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

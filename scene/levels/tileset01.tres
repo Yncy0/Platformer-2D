@@ -1,8 +1,9 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://b0yrhl5jscbfa"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://b0yrhl5jscbfa"]
 
 [ext_resource type="Texture2D" uid="uid://5usctshlve13" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="1_hxxvy"]
 [ext_resource type="Texture2D" uid="uid://c3xomxff5cf48" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_w6o1t"]
 [ext_resource type="PackedScene" uid="uid://cf83jtxnvs012" path="res://scene/characters/enemy/slime.tscn" id="3_cesv2"]
+[ext_resource type="PackedScene" uid="uid://c41tgwcyem62e" path="res://scene/pickups/coins.tscn" id="4_nrj62"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xl4bb"]
 texture = ExtResource("1_hxxvy")
@@ -468,6 +469,7 @@ texture = ExtResource("2_w6o1t")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_vv4xq"]
 scenes/2/scene = ExtResource("3_cesv2")
+scenes/3/scene = ExtResource("4_nrj62")
 
 [resource]
 physics_layer_0/collision_layer = 1
