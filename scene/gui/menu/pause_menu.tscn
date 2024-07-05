@@ -71,3 +71,7 @@ text = "EXIT
 [node name="SettingsMenu" parent="." instance=ExtResource("2_00yht")]
 visible = false
 layout_mode = 1
+
+[connection signal="pressed" from="PausePanel/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="PausePanel/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="PausePanel/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
