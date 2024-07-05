@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c41tgwcyem62e"]
+
+[ext_resource type="PackedScene" uid="uid://buy5lisiipvtj" path="res://scene/pickups/pickups.tscn" id="1_dpkgy"]
+
+[node name="Coins" instance=ExtResource("1_dpkgy")]
