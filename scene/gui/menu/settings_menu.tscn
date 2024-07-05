@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://dvqvfg8nxu114"]
+[gd_scene load_steps=3 format=3 uid="uid://dvqvfg8nxu114"]
+
+[ext_resource type="FontFile" uid="uid://dmb0vqloyhf3f" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="1_0mj4u"]
+[ext_resource type="PackedScene" uid="uid://c5l1ttky5e5fx" path="res://scene/gui/menu/volume_slider.tscn" id="2_4tlt0"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -7,3 +10,84 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0mj4u")
+theme_override_font_sizes/font_size = 64
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+columns = 2
+
+[node name="Master" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_0mj4u")
+theme_override_font_sizes/font_size = 32
+text = "Master
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MasterSlider" parent="Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_4tlt0")]
+layout_mode = 2
+
+[node name="BGM" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_0mj4u")
+theme_override_font_sizes/font_size = 32
+text = "BGM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BGMSlider" parent="Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_4tlt0")]
+layout_mode = 2
+
+[node name="SFX" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_0mj4u")
+theme_override_font_sizes/font_size = 32
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXSlider" parent="Panel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_4tlt0")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_0mj4u")
+theme_override_font_sizes/font_size = 32
+text = "BACK"
