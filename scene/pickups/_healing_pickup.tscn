@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://buvh7n05x005w"]
+
+[ext_resource type="PackedScene" uid="uid://buy5lisiipvtj" path="res://scene/pickups/_pickups.tscn" id="1_2ip23"]
+[ext_resource type="AudioStream" uid="uid://i2uwihsyc350" path="res://assets/brackeys_platformer_assets/sounds/power_up.wav" id="2_oqsdb"]
+[ext_resource type="Script" path="res://script/pickups/_healing_pickup.gd" id="2_rq13p"]
+
+[node name="HealingPickup" instance=ExtResource("1_2ip23")]
+script = ExtResource("2_rq13p")
+
+[node name="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("2_oqsdb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

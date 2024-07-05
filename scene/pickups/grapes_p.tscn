@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5fo1fx2f7wbr"]
+
+[ext_resource type="PackedScene" uid="uid://buvh7n05x005w" path="res://scene/pickups/_healing_pickup.tscn" id="1_ld1fd"]
+[ext_resource type="Texture2D" uid="uid://dg1urraau6uav" path="res://assets/brackeys_platformer_assets/sprites/fruit.png" id="2_a8ncd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6p37i"]
+radius = 7.07107
+
+[node name="GrapesP" instance=ExtResource("1_ld1fd")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_a8ncd")
+region_enabled = true
+region_rect = Rect2(32, 32, 16, 16)
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_6p37i")
