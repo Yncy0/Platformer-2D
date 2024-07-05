@@ -8,7 +8,7 @@ extends CharacterBody2D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
-var direction:int = 1
+var direction: float = 1.0
 
 
 func _physics_process(delta: float) -> void:
@@ -18,15 +18,11 @@ func _physics_process(delta: float) -> void:
 	
 	
 	if is_on_wall() or ray_cast_2d.is_colliding() == false:
-		direction = -1
-	else:
-		direction = 1
+		direction *= -1.0
 	
 	
 	velocity.x = direction * SPEED
-	
-	
-	
+
 
 	move_and_slide()
 
