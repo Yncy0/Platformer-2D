@@ -48,3 +48,9 @@ func bouncing() -> void:
 func jumping() -> void:
 	velocity.y = JUMP_VELOCITY
 
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area:
+		bouncing()
+		print("FUCK")

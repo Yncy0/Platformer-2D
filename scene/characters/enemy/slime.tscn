@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cf83jtxnvs012"]
 
-[ext_resource type="PackedScene" uid="uid://c1we2whqy5r26" path="res://scene/characters/enemy/_grounded_enemy.tscn" id="1_bs84u"]
+[ext_resource type="PackedScene" uid="uid://c1we2whqy5r26" path="res://scene/characters/enemy/_grounded_enemy.tscn" id="1_2yn2r"]
 [ext_resource type="Texture2D" uid="uid://c7llwb5hvy6il" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="2_fcko2"]
 [ext_resource type="PackedScene" uid="uid://haxrple0mnhl" path="res://scene/components/hurtbox.tscn" id="3_8frow"]
 
@@ -48,7 +48,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cuovw"]
 size = Vector2(10, 4.5)
 
-[node name="Slime" instance=ExtResource("1_bs84u")]
+[node name="Slime" instance=ExtResource("1_2yn2r")]
 SPEED = 50.0
 
 [node name="Sprite2D" parent="." index="0"]
@@ -71,12 +71,15 @@ libraries = {
 autoplay = "idle"
 
 [node name="Hurtbox" parent="." index="3" instance=ExtResource("3_8frow")]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(0, -4.75)
 shape = SubResource("RectangleShape2D_cuovw")
 debug_color = Color(0, 0.648917, 0.164104, 0.42)
 
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
 
 [editable path="Hurtbox"]
