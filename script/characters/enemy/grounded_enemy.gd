@@ -5,10 +5,15 @@ extends CharacterBody2D
 
 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
+@onready var health_component: Node = $HealthComponent
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction: float = 1.0
+
+
+func _ready() -> void:
+	health_component.connect("no_health", queue_free)
 
 
 func _physics_process(delta: float) -> void:
