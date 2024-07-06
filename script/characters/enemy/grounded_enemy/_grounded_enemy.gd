@@ -1,0 +1,71 @@
+class_name GroundedEnemy extends CharacterBody2D
+
+
+@export var SPEED = 300.0
+
+
+@onready var ray_cast_2d: RayCast2D = $RayCast2D
+@onready var health_component: HealthComponent = $HealthComponent
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
+var direction: float = 1.0
+
+
+enum STATES {
+	WANDER,
+	HIT,
+	DEAD
+}
+
+var current_state = STATES.WANDER
+
+
+func change_state(new_state) -> void:
+	current_state = new_state
+
+
+func _ready() -> void:
+	health_component.connect("no_health", dead)
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity.y += gravity * delta
+	
+	
+	match current_state:
+		STATES.WANDER:
+			wandering()
+		STATES.HIT:
+			hit()
+		STATES.DEAD:
+			dead()
+	
+	
+	move_and_slide()
+
+
+
+
+
+func wandering() -> void:
+	if is_on_wall() or ray_cast_2d.is_colliding() == false:
+		direction *= -1.0
+	
+	velocity.x = direction * SPEED
+
+
+func hit() -> void:
+	pass
+
+
+func dead() -> void:
+	pass
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if area:
+		health_component.health -= 1

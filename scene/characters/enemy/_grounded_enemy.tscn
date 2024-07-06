@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://c1we2whqy5r26"]
 
 [ext_resource type="PackedScene" uid="uid://buvvmbfjfuhxv" path="res://scene/characters/enemy/_enemy.tscn" id="1_ajf05"]
-[ext_resource type="Script" path="res://script/characters/enemy/grounded_enemy.gd" id="2_o7u2w"]
+[ext_resource type="Script" path="res://script/characters/enemy/grounded_enemy/_grounded_enemy.gd" id="2_53o0u"]
 [ext_resource type="Script" path="res://script/components/health_component.gd" id="3_ibye6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y305k"]
 
 [node name="GroundedEnemy" instance=ExtResource("1_ajf05")]
-script = ExtResource("2_o7u2w")
+script = ExtResource("2_53o0u")
 SPEED = 0.0
 
 [node name="AnimatedSprite2D" parent="." index="0"]
