@@ -1,7 +1,7 @@
 class_name MoveState extends PlayerState
 
 func enter() -> void:
-	player.animation_player.play("move")
+	player.animated_sprite_2d.play("move")
 
 
 func update_input(event: InputEvent) -> void:

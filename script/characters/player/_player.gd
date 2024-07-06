@@ -7,15 +7,12 @@ class_name Player extends CharacterBody2D
 
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction: float
-
-
-func _ready() -> void:
-	animation_player.play("idle")
 
 
 func update_gravity(delta: float) -> void:

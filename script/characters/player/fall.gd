@@ -2,7 +2,7 @@ class_name FallState extends PlayerState
 
 
 func enter() -> void:
-	player.animation_player.play("jump")
+	player.animated_sprite_2d.play("jump")
 
 
 func update_physics_process(delta: float) -> void:

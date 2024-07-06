@@ -2,7 +2,7 @@ class_name IdleState extends PlayerState
 
 func enter() -> void:
 	player.idling()
-	player.animation_player.play("idle")
+	player.animated_sprite_2d.play("idle")
 
 
 func update_input(event: InputEvent) -> void:
