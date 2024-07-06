@@ -6,14 +6,21 @@ class_name Player extends CharacterBody2D
 @export var bounce_velocity: float = -100.0
 
 
+@onready var mounts: Dictionary = {
+	"yellow_lizard": preload("res://scene/characters/neutral/yellow_lizard_mount.tscn").instantiate()
+}
+var mount_name: String 
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var mount_spawn: Node2D = $MountSpawn
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction: float
 
+var is_riding: bool = false
 
 func update_gravity(delta: float) -> void:
 	# Add the gravity.

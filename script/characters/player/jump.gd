@@ -3,7 +3,12 @@ class_name JumpState extends PlayerState
 
 func enter() -> void:
 	player.jumping()
-	player.animated_sprite_2d.play("jump")
+	
+	if !player.is_riding:
+		player.animated_sprite_2d.play("jump")
+	else:
+		player.animation_player.play("mount")
+		player.animated_sprite_2d.play("mount")
 
 
 func update_input(event: InputEvent) -> void:

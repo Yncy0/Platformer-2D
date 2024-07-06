@@ -97,6 +97,7 @@ size = Vector2(12, 6)
 
 [node name="YellowLizard" instance=ExtResource("1_7d1oi")]
 script = ExtResource("2_wugfj")
+speed = 25.0
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_rcrq7")

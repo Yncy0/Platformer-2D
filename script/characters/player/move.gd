@@ -1,7 +1,11 @@
 class_name MoveState extends PlayerState
 
 func enter() -> void:
-	player.animated_sprite_2d.play("move")
+	if !player.is_riding:
+		player.animated_sprite_2d.play("move")
+	else:
+		player.animation_player.play("mount")
+		player.animated_sprite_2d.play("mount")
 
 
 func update_input(event: InputEvent) -> void:
