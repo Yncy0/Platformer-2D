@@ -32,6 +32,15 @@ func moving() -> void:
 		velocity.x = direction * SPEED
 	else:
 		idling()
+	
+	moving_sprite_flip()
+
+
+func moving_sprite_flip() -> void:
+	if Input.is_action_pressed("move_left"):
+		animated_sprite_2d.flip_h = true
+	if Input.is_action_pressed("move_right"):
+		animated_sprite_2d.flip_h = false
 
 
 func bouncing() -> void:
@@ -40,7 +49,6 @@ func bouncing() -> void:
 
 func jumping() -> void:
 	velocity.y = JUMP_VELOCITY
-
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:

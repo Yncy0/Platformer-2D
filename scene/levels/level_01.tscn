@@ -26,18 +26,3 @@ collision_mask = 9
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_dcra0")]
-
-[connection signal="body_entered" from="TileMap/Coins" to="TileMap/Coins" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@166410" to="TileMap/@Area2D@166410" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@166411" to="TileMap/@Area2D@166411" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@166412" to="TileMap/@Area2D@166412" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@166413" to="TileMap/@Area2D@166413" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@166414" to="TileMap/@Area2D@166414" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@166415" to="TileMap/@Area2D@166415" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@166416" to="TileMap/@Area2D@166416" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@166417" to="TileMap/@Area2D@166417" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/Grapes" to="TileMap/Grapes" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@166418" to="TileMap/@Area2D@166418" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@166419" to="TileMap/@Area2D@166419" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@166420" to="TileMap/@Area2D@166420" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@166421" to="TileMap/@Area2D@166421" method="_on_body_entered"]
