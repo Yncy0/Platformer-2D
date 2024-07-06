@@ -18,12 +18,6 @@ func _ready() -> void:
 	animation_player.play("idle")
 
 
-func _physics_process(_delta: float) -> void:
-	pass
-	#update_gravity(delta)
-	#move_and_slide()
-
-
 func update_gravity(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
