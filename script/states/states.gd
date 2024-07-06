@@ -12,13 +12,13 @@ func exit() -> void:
 	pass
 
 
-func _unhandled_input(_event: InputEvent) -> void:
+func update_input(_event: InputEvent) -> void:
 	pass
 
 
-func _process(_delta: float) -> void:
+func update_process(_delta: float) -> void:
 	pass
 
 
-func _physics_process(_delta: float) -> void:
+func update_physics_process(_delta: float) -> void:
 	pass

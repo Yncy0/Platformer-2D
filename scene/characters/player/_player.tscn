@@ -124,8 +124,8 @@ size = Vector2(8, 8)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("2_qe20h")
-SPEED = 50.0
-JUMP_VELOCITY = -250.0
+SPEED = 150.0
+JUMP_VELOCITY = -300.0
 bounce_velocity = -250.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("current_state")]

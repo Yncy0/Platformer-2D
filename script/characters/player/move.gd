@@ -4,7 +4,13 @@ func enter() -> void:
 	player.animation_player.play("move")
 
 
-func _physics_process(_delta: float) -> void:
+func update_input(event: InputEvent) -> void:
+	if event.is_action_pressed("jump"):
+		change_state.emit("JumpState")
+
+
+func update_physics_process(delta: float) -> void:
+	player.update_gravity(delta)
 	player.moving()
 	
 	
