@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://beqmqsni2pina"]
+[gd_scene load_steps=18 format=3 uid="uid://beqmqsni2pina"]
 
 [ext_resource type="Texture2D" uid="uid://df7ku1wr285ub" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="2_ej0vx"]
 [ext_resource type="Script" path="res://script/characters/player/_player.gd" id="2_qe20h"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://df3h85gd4vu2a" path="res://scene/components/hitbox.tscn" id="4_pbh47"]
 [ext_resource type="Script" path="res://script/characters/player/idle.gd" id="4_wtok8"]
 [ext_resource type="Script" path="res://script/characters/player/move.gd" id="5_of2ut"]
+[ext_resource type="Script" path="res://script/characters/player/jump.gd" id="5_w4wrq"]
+[ext_resource type="Script" path="res://script/characters/player/fall.gd" id="6_eelx4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dvjfn"]
 radius = 6.0
@@ -122,9 +124,9 @@ size = Vector2(8, 8)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("2_qe20h")
-SPEED = 150.0
-JUMP_VELOCITY = -300.0
-bounce_velocity = -300.0
+SPEED = 50.0
+JUMP_VELOCITY = -250.0
+bounce_velocity = -250.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
 script = ExtResource("3_dex0x")
@@ -135,6 +137,12 @@ script = ExtResource("4_wtok8")
 
 [node name="MoveState" type="Node" parent="StateMachine"]
 script = ExtResource("5_of2ut")
+
+[node name="JumpState" type="Node" parent="StateMachine"]
+script = ExtResource("5_w4wrq")
+
+[node name="FallState" type="Node" parent="StateMachine"]
+script = ExtResource("6_eelx4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ej0vx")

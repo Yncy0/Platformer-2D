@@ -18,21 +18,10 @@ func _ready() -> void:
 	animation_player.play("idle")
 
 
-func _physics_process(delta: float) -> void:
-	update_gravity(delta)
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		jumping()
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	#direction = Input.get_axis("move_left", "move_right")
-	#if direction:
-		#moving()
-	#else:
-		#idling()
-
-	move_and_slide()
+func _physics_process(_delta: float) -> void:
+	pass
+	#update_gravity(delta)
+	#move_and_slide()
 
 
 func update_gravity(delta: float) -> void:
@@ -46,7 +35,12 @@ func idling() -> void:
 
 
 func moving() -> void:
-	velocity.x = direction * SPEED
+	direction = Input.get_axis("move_left", "move_right")
+	
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		idling()
 
 
 func bouncing() -> void:
