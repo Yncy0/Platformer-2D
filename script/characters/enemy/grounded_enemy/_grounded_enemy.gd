@@ -5,13 +5,15 @@ class_name GroundedEnemy extends CharacterBody2D
 
 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
-@onready var health_component: HealthComponent = $HealthComponent
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var health_component: HealthComponent = $HealthComponent
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction: float = 1.0
-
+var is_hurt: bool = false
 
 enum STATES {
 	WANDER,
@@ -27,7 +29,8 @@ func change_state(new_state) -> void:
 
 
 func _ready() -> void:
-	health_component.connect("no_health", dead)
+	pass
+	#health_component.connect("no_health", dead)
 
 
 func _physics_process(delta: float) -> void:
@@ -56,16 +59,26 @@ func wandering() -> void:
 		direction *= -1.0
 	
 	velocity.x = direction * SPEED
+	
+	if is_hurt == true:
+		change_state(STATES.HIT)
 
 
 func hit() -> void:
-	pass
+	animated_sprite_2d.play("hit")
+	
+	if health_component.health <= 0:
+		change_state(STATES.DEAD)
 
 
 func dead() -> void:
-	pass
+	velocity.x = 0.0
+	animated_sprite_2d.play("dead")
+	animation_player.play("dead")
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if area:
 		health_component.health -= 1
+		is_hurt = true
+
