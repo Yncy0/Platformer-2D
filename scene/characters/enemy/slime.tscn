@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c1we2whqy5r26" path="res://scene/characters/enemy/_grounded_enemy.tscn" id="1_2yn2r"]
 [ext_resource type="Texture2D" uid="uid://c7llwb5hvy6il" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="2_fcko2"]
-[ext_resource type="PackedScene" uid="uid://haxrple0mnhl" path="res://scene/components/hurtbox.tscn" id="3_8frow"]
+[ext_resource type="Script" path="res://script/characters/enemy/grounded_enemy/_grounded_enemy.gd" id="2_l7wls"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fs7kp"]
 atlas = ExtResource("2_fcko2")
@@ -109,15 +109,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_s8ulu"]
 radius = 7.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cuovw"]
-size = Vector2(10, 4.5)
-
 [sub_resource type="Animation" id="Animation_843pv"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/path = NodePath("Hurtbox/CollisionShape2D:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -129,80 +126,80 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Hurtbox/CollisionShape2D:disabled")
+tracks/1/path = NodePath("AnimatedSprite2D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:visible")
+tracks/2/path = NodePath(".:collision_mask")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [3]
 }
 
 [sub_resource type="Animation" id="Animation_8ftwi"]
 resource_name = "dead"
-length = 2.0
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/path = NodePath("Hurtbox/CollisionShape2D:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Hurtbox/CollisionShape2D:disabled")
+tracks/1/path = NodePath("AnimatedSprite2D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"queue_free"
 }]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:collision_mask")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dwcoa"]
@@ -211,21 +208,35 @@ _data = {
 "dead": SubResource("Animation_8ftwi")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cuovw"]
+size = Vector2(10, 4.5)
+
 [node name="Slime" instance=ExtResource("1_2yn2r")]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("2_l7wls")
 SPEED = 50.0
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_mwoyr")
 animation = &"dead"
-autoplay = "idle"
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_s8ulu")
 metadata/_edit_lock_ = true
 
-[node name="Hurtbox" parent="." index="2" instance=ExtResource("3_8frow")]
+[node name="HealthComponent" parent="." index="3"]
+max_health = 1
+
+[node name="AnimationPlayer" parent="." index="4"]
+libraries = {
+"": SubResource("AnimationLibrary_dwcoa")
+}
+autoplay = "idle"
+
+[node name="Hurtbox" parent="." index="5"]
 collision_layer = 4
 collision_mask = 2
 
@@ -233,12 +244,6 @@ collision_mask = 2
 position = Vector2(0, -4.75)
 shape = SubResource("RectangleShape2D_cuovw")
 debug_color = Color(0, 0.648917, 0.164104, 0.42)
-
-[node name="AnimationPlayer" parent="." index="5"]
-libraries = {
-"": SubResource("AnimationLibrary_dwcoa")
-}
-autoplay = "idle"
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 

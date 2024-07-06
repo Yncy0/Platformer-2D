@@ -7,7 +7,7 @@ signal no_health
 
 
 @export var max_health: int: set = set_max_health
-var health: int = max_health: set = set_health
+@onready var health: int = max_health: set = set_health
 
 
 func set_max_health(value: int) -> void:
@@ -18,7 +18,6 @@ func set_max_health(value: int) -> void:
 
 func set_health(value: int) -> void:
 	health = value
-	health = clamp(health, 0, max_health)
 	
 	if value <= 0 :
 		emit_signal("no_health")

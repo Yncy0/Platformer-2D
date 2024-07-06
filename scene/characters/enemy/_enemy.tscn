@@ -1,5 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://buvvmbfjfuhxv"]
+[gd_scene load_steps=3 format=3 uid="uid://buvvmbfjfuhxv"]
 
 [ext_resource type="PackedScene" uid="uid://cmq51ban55wi4" path="res://scene/characters/_entity.tscn" id="1_uwnfy"]
+[ext_resource type="PackedScene" uid="uid://haxrple0mnhl" path="res://scene/components/hurtbox.tscn" id="2_hiplm"]
 
 [node name="Enemy" instance=ExtResource("1_uwnfy")]
+
+[node name="Hurtbox" parent="." index="3" instance=ExtResource("2_hiplm")]

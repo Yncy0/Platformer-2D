@@ -51,10 +51,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-
-
-
 func wandering() -> void:
+	animated_sprite_2d.play("idle")
 	if is_on_wall() or ray_cast_2d.is_colliding() == false:
 		direction *= -1.0
 	
@@ -65,7 +63,11 @@ func wandering() -> void:
 
 
 func hit() -> void:
+	velocity.x = 0.0
 	animated_sprite_2d.play("hit")
+	
+	if is_hurt == false:
+		change_state(STATES.WANDER)
 	
 	if health_component.health <= 0:
 		change_state(STATES.DEAD)
@@ -82,3 +84,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		health_component.health -= 1
 		is_hurt = true
 
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite_2d.animation == "hit":
+		is_hurt = false

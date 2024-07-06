@@ -1,22 +1,22 @@
 [gd_scene load_steps=9 format=3 uid="uid://c5fo1fx2f7wbr"]
 
-[ext_resource type="PackedScene" uid="uid://buvh7n05x005w" path="res://scene/pickups/_healing_pickup.tscn" id="1_ld1fd"]
-[ext_resource type="Texture2D" uid="uid://dg1urraau6uav" path="res://assets/brackeys_platformer_assets/sprites/fruit.png" id="2_a8ncd"]
+[ext_resource type="PackedScene" uid="uid://buvh7n05x005w" path="res://scene/pickups/_healing_pickup.tscn" id="1_h8fra"]
+[ext_resource type="Texture2D" uid="uid://dg1urraau6uav" path="res://assets/brackeys_platformer_assets/sprites/fruit.png" id="2_khxqr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gn1qn"]
-atlas = ExtResource("2_a8ncd")
+atlas = ExtResource("2_khxqr")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7etp6"]
-atlas = ExtResource("2_a8ncd")
+atlas = ExtResource("2_khxqr")
 region = Rect2(32, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ug75"]
-atlas = ExtResource("2_a8ncd")
+atlas = ExtResource("2_khxqr")
 region = Rect2(32, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qxs8"]
-atlas = ExtResource("2_a8ncd")
+atlas = ExtResource("2_khxqr")
 region = Rect2(32, 48, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3tejy"]
@@ -42,11 +42,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_6p37i"]
 radius = 7.07107
 
-[node name="GrapesP" instance=ExtResource("1_ld1fd")]
+[node name="Grapes" instance=ExtResource("1_h8fra")]
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_3tejy")
-frame_progress = 0.318477
+autoplay = "default"
+frame_progress = 0.0743627
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CircleShape2D_6p37i")
