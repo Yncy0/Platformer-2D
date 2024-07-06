@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://b0thw4jc35dlv"]
+
+[ext_resource type="PackedScene" uid="uid://dvepk1rbui1en" path="res://scene/characters/neutral/_mounts.tscn" id="1_7288i"]
+[ext_resource type="Texture2D" uid="uid://c6gd4bcgl7se" path="res://assets/custom/sprites/DinoSprites - tard.png" id="2_n45tc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu5jv"]
+atlas = ExtResource("2_n45tc")
+region = Rect2(408, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pfr7"]
+atlas = ExtResource("2_n45tc")
+region = Rect2(432, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo2qu"]
+atlas = ExtResource("2_n45tc")
+region = Rect2(456, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwm2u"]
+atlas = ExtResource("2_n45tc")
+region = Rect2(480, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyc3s"]
+atlas = ExtResource("2_n45tc")
+region = Rect2(504, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h51ah"]
+atlas = ExtResource("2_n45tc")
+region = Rect2(528, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tj10v"]
+atlas = ExtResource("2_n45tc")
+region = Rect2(552, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k3bd3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu5jv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pfr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xo2qu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwm2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyc3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h51ah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tj10v")
+}],
+"loop": true,
+"name": &"move",
+"speed": 7.0
+}]
+
+[node name="YellowLizardMount" instance=ExtResource("1_7288i")]
+sprite_frames = SubResource("SpriteFrames_k3bd3")
+animation = &"idle"
