@@ -7,9 +7,6 @@ func enter() -> void:
 func _physics_process(delta: float) -> void:
 	player.moving()
 	
-	
 	if player.velocity.x == 0:
 		change_state.emit("IdleState")
-	
-	
-	#player.move_and_slide()
+

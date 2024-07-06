@@ -1,8 +1,8 @@
 class_name IdleState extends PlayerState
 
 func enter() -> void:
-	player.animation_player.play("idle")
 	player.idling()
+	player.animation_player.play("idle")
 
 
 func _unhandled_input(_event: InputEvent) -> void:
