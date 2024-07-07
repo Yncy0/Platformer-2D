@@ -118,18 +118,3 @@ libraries = {
 "": SubResource("AnimationLibrary_t01g0")
 }
 autoplay = "move"
-
-[connection signal="body_entered" from="TileMap/Coins" to="TileMap/Coins" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@102298" to="TileMap/@Area2D@102298" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@102299" to="TileMap/@Area2D@102299" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@102300" to="TileMap/@Area2D@102300" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@102301" to="TileMap/@Area2D@102301" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@102302" to="TileMap/@Area2D@102302" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@102303" to="TileMap/@Area2D@102303" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@102304" to="TileMap/@Area2D@102304" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@102305" to="TileMap/@Area2D@102305" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/Grapes" to="TileMap/Grapes" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@102306" to="TileMap/@Area2D@102306" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@102307" to="TileMap/@Area2D@102307" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@102308" to="TileMap/@Area2D@102308" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@102309" to="TileMap/@Area2D@102309" method="_on_body_entered"]

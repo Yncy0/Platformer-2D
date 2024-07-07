@@ -66,7 +66,6 @@ func wandering() -> void:
 func hit() -> void:
 	velocity.x = 0.0
 	animated_sprite_2d.play("hit")
-	sfx.play()
 	
 	if is_hurt == false:
 		change_state(STATES.WANDER)
@@ -91,6 +90,7 @@ func sprite_flip() -> void:
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if area is Hitbox:
 		health_component.health -= area.damage
+		sfx.play()
 		is_hurt = true
 
 
