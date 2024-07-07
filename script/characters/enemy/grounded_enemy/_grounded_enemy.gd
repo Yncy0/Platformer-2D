@@ -48,7 +48,7 @@ func _physics_process(delta: float) -> void:
 		STATES.DEAD:
 			dead()
 	
-	
+	sprite_flip()
 	move_and_slide()
 
 
@@ -79,6 +79,13 @@ func dead() -> void:
 	velocity.x = 0.0
 	animated_sprite_2d.play("dead")
 	animation_player.play("dead")
+
+
+func sprite_flip() -> void:
+	if direction == 1:
+		animated_sprite_2d.flip_h = false
+	if direction == -1:
+		animated_sprite_2d.flip_h = true
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:

@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
-
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -21,8 +21,15 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.x = direction * speed
 	
+	sprite_flip()
 	move_and_slide()
 
+
+func sprite_flip() -> void:
+	if direction == 1:
+		animated_sprite_2d.flip_h = false
+	if direction == -1:
+		animated_sprite_2d.flip_h = true
 
 
 func _on_mount_area_body_entered(body: Node2D) -> void:

@@ -101,8 +101,8 @@ speed = 25.0
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_rcrq7")
-animation = &"idle"
-frame_progress = 0.356629
+animation = &"move"
+autoplay = "move"
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CapsuleShape2D_s2qmd")
