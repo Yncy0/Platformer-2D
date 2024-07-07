@@ -1,8 +1,84 @@
-[gd_scene load_steps=4 format=3 uid="uid://dksswba8ci81m"]
+[gd_scene load_steps=11 format=3 uid="uid://dksswba8ci81m"]
 
 [ext_resource type="TileSet" uid="uid://b0yrhl5jscbfa" path="res://scene/levels/tileset01.tres" id="1_hnayi"]
 [ext_resource type="PackedScene" uid="uid://beqmqsni2pina" path="res://scene/characters/player/_player.tscn" id="2_ai7ew"]
 [ext_resource type="PackedScene" uid="uid://cy5n63m5wv4n2" path="res://scene/gui/menu/pause_menu.tscn" id="3_dcra0"]
+[ext_resource type="PackedScene" uid="uid://c4mu8ity02om" path="res://scene/levels/platforms/platfrom_g.tscn" id="4_uktn6"]
+
+[sub_resource type="Animation" id="Animation_1wjme"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(368, 452), Vector2(561, 452)]
+}
+
+[sub_resource type="Animation" id="Animation_yewij"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(368, 452)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wk23q"]
+_data = {
+"RESET": SubResource("Animation_yewij"),
+"move": SubResource("Animation_1wjme")
+}
+
+[sub_resource type="Animation" id="Animation_f0qqu"]
+resource_name = "move"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(416, 341), Vector2(497, 341)]
+}
+
+[sub_resource type="Animation" id="Animation_nsof8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(416, 341)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t01g0"]
+_data = {
+"RESET": SubResource("Animation_nsof8"),
+"move": SubResource("Animation_f0qqu")
+}
 
 [node name="Level01" type="Node2D"]
 
@@ -24,3 +100,36 @@ position = Vector2(120, 431)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_dcra0")]
+
+[node name="PlatfromG" parent="." instance=ExtResource("4_uktn6")]
+position = Vector2(368, 452)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlatfromG"]
+libraries = {
+"": SubResource("AnimationLibrary_wk23q")
+}
+autoplay = "move"
+
+[node name="PlatfromG2" parent="." instance=ExtResource("4_uktn6")]
+position = Vector2(416, 341)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlatfromG2"]
+libraries = {
+"": SubResource("AnimationLibrary_t01g0")
+}
+autoplay = "move"
+
+[connection signal="body_entered" from="TileMap/Coins" to="TileMap/Coins" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@102298" to="TileMap/@Area2D@102298" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@102299" to="TileMap/@Area2D@102299" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@102300" to="TileMap/@Area2D@102300" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@102301" to="TileMap/@Area2D@102301" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@102302" to="TileMap/@Area2D@102302" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@102303" to="TileMap/@Area2D@102303" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@102304" to="TileMap/@Area2D@102304" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@102305" to="TileMap/@Area2D@102305" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/Grapes" to="TileMap/Grapes" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@102306" to="TileMap/@Area2D@102306" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@102307" to="TileMap/@Area2D@102307" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@102308" to="TileMap/@Area2D@102308" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@102309" to="TileMap/@Area2D@102309" method="_on_body_entered"]
