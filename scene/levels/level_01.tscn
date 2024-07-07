@@ -24,18 +24,3 @@ position = Vector2(120, 431)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_dcra0")]
-
-[connection signal="body_entered" from="TileMap/Coins" to="TileMap/Coins" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@356893" to="TileMap/@Area2D@356893" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@356894" to="TileMap/@Area2D@356894" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@356895" to="TileMap/@Area2D@356895" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/Grapes" to="TileMap/Grapes" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@356896" to="TileMap/@Area2D@356896" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@356897" to="TileMap/@Area2D@356897" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@356898" to="TileMap/@Area2D@356898" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@356899" to="TileMap/@Area2D@356899" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@356900" to="TileMap/@Area2D@356900" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@356901" to="TileMap/@Area2D@356901" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@356902" to="TileMap/@Area2D@356902" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@356903" to="TileMap/@Area2D@356903" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@356904" to="TileMap/@Area2D@356904" method="_on_body_entered"]

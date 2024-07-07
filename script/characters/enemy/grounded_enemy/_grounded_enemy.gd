@@ -82,8 +82,8 @@ func dead() -> void:
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-	if area:
-		health_component.health -= 1
+	if area is Hitbox:
+		health_component.health -= area.damage
 		is_hurt = true
 
 
