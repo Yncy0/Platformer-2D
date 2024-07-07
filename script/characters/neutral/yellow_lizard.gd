@@ -28,6 +28,7 @@ func _physics_process(delta: float) -> void:
 func _on_mount_area_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.is_riding = true
+		body.animated_sprite_2d.flip_h = false
 		body.mount_name = "yellow_lizard"
 		body.mount_spawn.add_child(body.mounts[body.mount_name])
 		self.queue_free()
