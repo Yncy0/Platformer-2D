@@ -29,3 +29,4 @@ func update_physics_process(delta: float) -> void:
 	
 	
 	player.move_and_slide()
+	player.platform_velocity = player.get_platform_velocity()

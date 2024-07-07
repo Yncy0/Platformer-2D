@@ -26,6 +26,7 @@ var projectile_name: String = "fireball"
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
+var platform_velocity: Vector2 = Vector2.ZERO
 var direction: float
 
 var is_riding: bool = false
@@ -50,7 +51,7 @@ func moving() -> void:
 	
 	if direction:
 		velocity.x = direction * SPEED
-	else:
+	elif is_on_floor():
 		idling()
 	
 	moving_sprite_flip()
@@ -71,6 +72,7 @@ func bouncing() -> void:
 
 func jumping() -> void:
 	velocity.y = JUMP_VELOCITY
+	velocity.x = platform_velocity.x
 
 
 func shooting() -> void:

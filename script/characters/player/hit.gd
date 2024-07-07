@@ -14,5 +14,9 @@ func enter() -> void:
 	change_state.emit("IdleState")
 
 
+func update_physics_process(delta: float) -> void:
+	player.move_and_slide()
+	player.platform_velocity = player.get_platform_velocity()
+
 func exit() -> void:
 	player.is_hurt = false

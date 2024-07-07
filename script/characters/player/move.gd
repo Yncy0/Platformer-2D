@@ -27,4 +27,5 @@ func update_physics_process(delta: float) -> void:
 		change_state.emit("HitState")
 	
 	player.move_and_slide()
+	player.platform_velocity = player.get_platform_velocity()
 
