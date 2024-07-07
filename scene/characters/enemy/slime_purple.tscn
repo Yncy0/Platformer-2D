@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dwn1ecr6pr2cg"]
+[gd_scene load_steps=23 format=3 uid="uid://dwn1ecr6pr2cg"]
 
 [ext_resource type="PackedScene" uid="uid://c1we2whqy5r26" path="res://scene/characters/enemy/_grounded_enemy.tscn" id="1_dr3a1"]
 [ext_resource type="Script" path="res://script/characters/enemy/grounded_enemy/_grounded_enemy.gd" id="2_86cl3"]
@@ -209,7 +209,10 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1al3o"]
-size = Vector2(14, 7)
+size = Vector2(10, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plrfg"]
+size = Vector2(14, 10)
 
 [node name="SlimePurple" instance=ExtResource("1_dr3a1")]
 collision_layer = 4
@@ -220,9 +223,7 @@ SPEED = 50.0
 [node name="AnimatedSprite2D" parent="." index="0"]
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_iq7jq")
-animation = &"hit"
-frame = 3
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 2)
@@ -236,16 +237,22 @@ libraries = {
 "": SubResource("AnimationLibrary_py5ou")
 }
 
-[node name="Hurtbox" parent="." index="5"]
-collision_layer = 4
-collision_mask = 2
-
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2(0, -3.5)
+position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_1al3o")
 debug_color = Color(0.100042, 0.648284, 3.85046e-07, 0.42)
+
+[node name="Hitbox" parent="." index="6"]
+position = Vector2(0, 0)
+damage = 1.0
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_plrfg")
+debug_color = Color(0.990097, 0, 0.282531, 0.42)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 
 [editable path="Hurtbox"]
+[editable path="Hitbox"]

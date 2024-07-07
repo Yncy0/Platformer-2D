@@ -29,6 +29,7 @@ var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction: float
 
 var is_riding: bool = false
+var is_hurt: bool = false
 
 func update_gravity(delta: float) -> void:
 	# Add the gravity.
@@ -81,3 +82,8 @@ func shooting() -> void:
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area:
 		bouncing()
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if area is Hitbox:
+		is_hurt = true

@@ -1,8 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://buvvmbfjfuhxv"]
+[gd_scene load_steps=4 format=3 uid="uid://buvvmbfjfuhxv"]
 
 [ext_resource type="PackedScene" uid="uid://cmq51ban55wi4" path="res://scene/characters/_entity.tscn" id="1_uwnfy"]
 [ext_resource type="PackedScene" uid="uid://haxrple0mnhl" path="res://scene/components/hurtbox.tscn" id="2_hiplm"]
+[ext_resource type="PackedScene" uid="uid://df3h85gd4vu2a" path="res://scene/components/hitbox.tscn" id="3_p4y1h"]
 
 [node name="Enemy" instance=ExtResource("1_uwnfy")]
 
 [node name="Hurtbox" parent="." index="3" instance=ExtResource("2_hiplm")]
+collision_layer = 4
+collision_mask = 2
+
+[node name="Hitbox" parent="." index="4" instance=ExtResource("3_p4y1h")]
+position = Vector2(0, -1)
+collision_layer = 4
+collision_mask = 2

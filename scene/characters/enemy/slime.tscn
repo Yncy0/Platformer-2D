@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cf83jtxnvs012"]
+[gd_scene load_steps=23 format=3 uid="uid://cf83jtxnvs012"]
 
 [ext_resource type="PackedScene" uid="uid://c1we2whqy5r26" path="res://scene/characters/enemy/_grounded_enemy.tscn" id="1_2yn2r"]
 [ext_resource type="Texture2D" uid="uid://c7llwb5hvy6il" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="2_fcko2"]
@@ -107,7 +107,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s8ulu"]
-radius = 7.0
+radius = 6.0
 
 [sub_resource type="Animation" id="Animation_843pv"]
 length = 0.001
@@ -209,7 +209,10 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cuovw"]
-size = Vector2(10, 4.5)
+size = Vector2(10, 3.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxler"]
+size = Vector2(14, 10)
 
 [node name="Slime" instance=ExtResource("1_2yn2r")]
 collision_layer = 4
@@ -223,9 +226,8 @@ sprite_frames = SubResource("SpriteFrames_mwoyr")
 animation = &"dead"
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(0, 1)
+position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_s8ulu")
-metadata/_edit_lock_ = true
 
 [node name="HealthComponent" parent="." index="3"]
 max_health = 1
@@ -236,15 +238,21 @@ libraries = {
 }
 autoplay = "idle"
 
-[node name="Hurtbox" parent="." index="5"]
-collision_layer = 4
-collision_mask = 2
-
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2(0, -4.75)
+position = Vector2(0, -4.25)
 shape = SubResource("RectangleShape2D_cuovw")
 debug_color = Color(0, 0.648917, 0.164104, 0.42)
+
+[node name="Hitbox" parent="." index="6"]
+position = Vector2(0, 0)
+damage = 1.0
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_yxler")
+debug_color = Color(0.991105, 0, 0.269896, 0.42)
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 
 [editable path="Hurtbox"]
+[editable path="Hitbox"]
