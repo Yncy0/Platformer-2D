@@ -9,4 +9,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	position.x += projectile_speed * delta
+	position += transform.x * projectile_speed * delta
+
+
+func _on_timer_timeout() -> void:
+	queue_free()

@@ -357,6 +357,12 @@ libraries = {
 "": SubResource("AnimationLibrary_1a286")
 }
 
+[node name="MountSpawn" type="Node2D" parent="."]
+position = Vector2(0, 3)
+metadata/_edit_lock_ = true
+
+[node name="ProjectileSpawn" type="Node2D" parent="."]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 limit_bottom = 560
@@ -371,10 +377,6 @@ collision_mask = 4
 position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_dseq4")
 debug_color = Color(0.994374, 0, 0.223101, 0.42)
-metadata/_edit_lock_ = true
-
-[node name="MountSpawn" type="Node2D" parent="."]
-position = Vector2(0, 3)
 metadata/_edit_lock_ = true
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

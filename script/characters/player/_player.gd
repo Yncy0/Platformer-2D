@@ -11,9 +11,15 @@ class_name Player extends CharacterBody2D
 }
 var mount_name: String 
 
+@onready var projectiles: Dictionary = {
+	"fireball": preload("res://scene/items/fireball.tscn")
+}
+var projectile_name: String = "fireball"
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var mount_spawn: Node2D = $MountSpawn
+@onready var projectile_spawn: Node2D = $ProjectileSpawn
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -26,6 +32,10 @@ func update_gravity(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	
+	if is_riding:
+		if Input.is_action_just_pressed("ui_up"):
+			shooting()
 
 
 func idling() -> void:
@@ -46,8 +56,10 @@ func moving() -> void:
 func moving_sprite_flip() -> void:
 	if Input.is_action_pressed("move_left"):
 		animated_sprite_2d.flip_h = true
+		projectile_spawn.rotation_degrees = 180
 	if Input.is_action_pressed("move_right"):
 		animated_sprite_2d.flip_h = false
+		projectile_spawn.rotation_degrees = 0
 
 
 func bouncing() -> void:
@@ -56,6 +68,12 @@ func bouncing() -> void:
 
 func jumping() -> void:
 	velocity.y = JUMP_VELOCITY
+
+
+func shooting() -> void:
+	var s = projectiles[projectile_name].instantiate()
+	projectile_spawn.add_child(s)
+	s.transform = projectile_spawn.global_transform
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
