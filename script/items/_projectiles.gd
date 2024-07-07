@@ -2,10 +2,12 @@ extends Node2D
 
 
 @export var projectile_speed: float = 100.0
+@onready var sfx: AudioStreamPlayer = $SFX
 
 
 func _ready() -> void:
 	set_as_top_level(true)
+	sfx.play()
 
 
 func _physics_process(delta: float) -> void:

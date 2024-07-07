@@ -8,7 +8,7 @@ script = ExtResource("1_rndbs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="SFX" type="AudioStreamPlayer" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
