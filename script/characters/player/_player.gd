@@ -33,8 +33,8 @@ func update_gravity(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
-	if is_riding:
-		if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("ui_up"):
+		if is_riding:
 			shooting()
 
 

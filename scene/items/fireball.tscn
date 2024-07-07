@@ -18,19 +18,26 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tirfa"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_uc8bx"]
 radius = 4.0
 
 [node name="Fireball" instance=ExtResource("1_h7tly")]
-collision_layer = 2
-collision_mask = 4
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_joyfm")
 frame_progress = 0.431635
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="Hitbox" parent="." index="3"]
+collision_layer = 2
+collision_mask = 4
+damage = 5.0
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2(3, 0)
-shape = SubResource("CircleShape2D_tirfa")
+shape = SubResource("CircleShape2D_uc8bx")
+debug_color = Color(1, 0.00584033, 0.0581184, 0.42)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+
+[editable path="Hitbox"]

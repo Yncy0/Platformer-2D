@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvo3bdc1h751c"]
+[gd_scene load_steps=3 format=3 uid="uid://dvo3bdc1h751c"]
 
 [ext_resource type="PackedScene" uid="uid://df3h85gd4vu2a" path="res://scene/components/hitbox.tscn" id="1_0gopp"]
+[ext_resource type="Script" path="res://script/items/_projectiles.gd" id="1_rndbs"]
 
 [node name="Projectiles" type="Node2D"]
+script = ExtResource("1_rndbs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 
