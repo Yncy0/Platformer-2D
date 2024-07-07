@@ -1,13 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://dvo3bdc1h751c"]
 
-[ext_resource type="Script" path="res://script/items/_projectiles.gd" id="1_rndbs"]
+[ext_resource type="PackedScene" uid="uid://df3h85gd4vu2a" path="res://scene/components/hitbox.tscn" id="1_0gopp"]
 
-[node name="Projectiles" type="Area2D"]
-script = ExtResource("1_rndbs")
+[node name="Projectiles" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
@@ -15,3 +12,5 @@ script = ExtResource("1_rndbs")
 wait_time = 5.0
 one_shot = true
 autostart = true
+
+[node name="Hitbox" parent="." instance=ExtResource("1_0gopp")]
