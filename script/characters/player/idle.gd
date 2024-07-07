@@ -18,10 +18,12 @@ func update_physics_process(delta: float) -> void:
 	player.update_gravity(delta)
 	player.moving()
 	
-	
 	if player.velocity.x != 0:
 		change_state.emit("MoveState")
 	
+	if !player.is_on_floor():
+		change_state.emit("FallState")
+
 	if player.is_hurt:
 		change_state.emit("HitState")
 	

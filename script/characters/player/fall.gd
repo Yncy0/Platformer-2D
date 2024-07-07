@@ -16,5 +16,7 @@ func update_physics_process(delta: float) -> void:
 	if player.is_on_floor():
 		change_state.emit("IdleState")
 	
+	if player.is_hurt:
+		change_state.emit("HitState") 
 	
 	player.move_and_slide()

@@ -22,14 +22,11 @@ func update_physics_process(delta: float) -> void:
 	player.update_gravity(delta)
 	player.moving()
 	
-	
-	if Input.is_action_just_released("jump"):
-		pass
-	
-	
-	if player.velocity.y > player.JUMP_VELOCITY and !player.is_on_floor():
+	if player.velocity.y > -3.0 and !player.is_on_floor():
 		change_state.emit("FallState")
 	
+	if player.is_hurt:
+		change_state.emit("HitState")
 	
 	player.move_and_slide()
 

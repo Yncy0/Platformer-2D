@@ -345,7 +345,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dseq4"]
-size = Vector2(8, 3)
+size = Vector2(11, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bk1d1"]
 size = Vector2(10, 16)
@@ -409,7 +409,7 @@ collision_mask = 4
 damage = 1.0
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2(0, 12.5)
+position = Vector2(-0.5, 12.5)
 shape = SubResource("RectangleShape2D_dseq4")
 debug_color = Color(0.994374, 0, 0.223101, 0.42)
 
