@@ -8,6 +8,7 @@ class_name GroundedEnemy extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var health_component: HealthComponent = $HealthComponent
+@onready var sfx: AudioStreamPlayer = $SFX
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -65,6 +66,7 @@ func wandering() -> void:
 func hit() -> void:
 	velocity.x = 0.0
 	animated_sprite_2d.play("hit")
+	sfx.play()
 	
 	if is_hurt == false:
 		change_state(STATES.WANDER)

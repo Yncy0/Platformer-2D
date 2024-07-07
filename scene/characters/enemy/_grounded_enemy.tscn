@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1we2whqy5r26"]
+[gd_scene load_steps=5 format=3 uid="uid://c1we2whqy5r26"]
 
 [ext_resource type="PackedScene" uid="uid://buvvmbfjfuhxv" path="res://scene/characters/enemy/_enemy.tscn" id="1_ajf05"]
+[ext_resource type="AudioStream" uid="uid://dsgb8mdl0uyxq" path="res://assets/brackeys_platformer_assets/sounds/hurt.wav" id="3_djbl7"]
 [ext_resource type="Script" path="res://script/components/health_component.gd" id="3_ibye6"]
 
 [sub_resource type="GDScript" id="GDScript_371jp"]
@@ -98,3 +99,7 @@ SPEED = 0.0
 
 [node name="HealthComponent" type="Node" parent="." index="3"]
 script = ExtResource("3_ibye6")
+
+[node name="SFX" type="AudioStreamPlayer" parent="." index="6"]
+stream = ExtResource("3_djbl7")
+bus = &"SFX"

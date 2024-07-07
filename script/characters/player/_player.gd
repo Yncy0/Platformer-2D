@@ -20,6 +20,8 @@ var projectile_name: String = "fireball"
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var mount_spawn: Node2D = $MountSpawn
 @onready var projectile_spawn: Node2D = $ProjectileSpawn
+@onready var sfx_hurt: AudioStreamPlayer = $SFXHurt
+@onready var sfx_jump: AudioStreamPlayer = $SFXJump
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.

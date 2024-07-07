@@ -3,6 +3,7 @@ class_name JumpState extends PlayerState
 
 func enter() -> void:
 	player.jumping()
+	player.sfx_jump.play()
 	
 	if !player.is_riding:
 		player.animated_sprite_2d.play("jump")

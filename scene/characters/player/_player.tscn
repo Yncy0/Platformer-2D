@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://beqmqsni2pina"]
+[gd_scene load_steps=51 format=3 uid="uid://beqmqsni2pina"]
 
 [ext_resource type="Texture2D" uid="uid://df7ku1wr285ub" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="2_ej0vx"]
 [ext_resource type="Script" path="res://script/characters/player/_player.gd" id="2_qe20h"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://script/characters/player/move.gd" id="5_of2ut"]
 [ext_resource type="Script" path="res://script/characters/player/jump.gd" id="5_w4wrq"]
 [ext_resource type="Script" path="res://script/characters/player/fall.gd" id="6_eelx4"]
+[ext_resource type="AudioStream" uid="uid://da6xb4qwl2gj5" path="res://assets/brackeys_platformer_assets/sounds/jump.wav" id="9_a0wlx"]
+[ext_resource type="AudioStream" uid="uid://dsgb8mdl0uyxq" path="res://assets/brackeys_platformer_assets/sounds/hurt.wav" id="10_hbpb7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q3kqg"]
 atlas = ExtResource("2_ej0vx")
@@ -379,6 +381,14 @@ position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_dseq4")
 debug_color = Color(0.994374, 0, 0.223101, 0.42)
 metadata/_edit_lock_ = true
+
+[node name="SFXJump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_a0wlx")
+bus = &"SFX"
+
+[node name="SFXHurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_hbpb7")
+bus = &"SFX"
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 
