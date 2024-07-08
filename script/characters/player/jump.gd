@@ -4,6 +4,7 @@ class_name JumpState extends PlayerState
 func enter() -> void:
 	player.jumping()
 	player.sfx_jump.play()
+	player.jump_buffer_timer = 0.1
 	
 	if !player.is_riding:
 		player.animated_sprite_2d.play("jump")
@@ -21,6 +22,8 @@ func update_input(event: InputEvent) -> void:
 func update_physics_process(delta: float) -> void:
 	player.update_gravity(delta)
 	player.moving()
+	
+	player.jump_buffer_timer -= delta
 	
 	if player.velocity.y > -10.0 and !player.is_on_floor():
 		change_state.emit("FallState")

@@ -22,7 +22,6 @@ var projectile_name: String = "fireball"
 @onready var projectile_spawn: Node2D = $ProjectileSpawn
 @onready var sfx_hurt: AudioStreamPlayer = $SFXHurt
 @onready var sfx_jump: AudioStreamPlayer = $SFXJump
-@onready var buffer_jump_timer: Timer = $BufferJumpTimer
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -34,6 +33,7 @@ var is_riding: bool = false
 var is_hurt: bool = false
 
 var jump_available: bool = false
+var jump_buffer_timer: float = 0.0
 
 
 func update_gravity(delta: float) -> void:
