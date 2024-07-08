@@ -3,7 +3,22 @@
 [ext_resource type="TileSet" uid="uid://b0yrhl5jscbfa" path="res://scene/levels/tileset01.tres" id="1_hnayi"]
 [ext_resource type="PackedScene" uid="uid://beqmqsni2pina" path="res://scene/characters/player/_player.tscn" id="2_ai7ew"]
 [ext_resource type="PackedScene" uid="uid://cy5n63m5wv4n2" path="res://scene/gui/menu/pause_menu.tscn" id="3_dcra0"]
-[ext_resource type="PackedScene" uid="uid://c4mu8ity02om" path="res://scene/levels/platforms/platfrom_g.tscn" id="4_uktn6"]
+[ext_resource type="PackedScene" uid="uid://c4mu8ity02om" path="res://scene/levels/platforms/platform_g.tscn" id="4_uktn6"]
+
+[sub_resource type="Animation" id="Animation_yewij"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(368, 452)]
+}
 
 [sub_resource type="Animation" id="Animation_1wjme"]
 resource_name = "move"
@@ -22,7 +37,13 @@ tracks/0/keys = {
 "values": [Vector2(368, 452), Vector2(561, 452)]
 }
 
-[sub_resource type="Animation" id="Animation_yewij"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wk23q"]
+_data = {
+"RESET": SubResource("Animation_yewij"),
+"move": SubResource("Animation_1wjme")
+}
+
+[sub_resource type="Animation" id="Animation_nsof8"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -34,13 +55,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(368, 452)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wk23q"]
-_data = {
-"RESET": SubResource("Animation_yewij"),
-"move": SubResource("Animation_1wjme")
+"values": [Vector2(416, 341)]
 }
 
 [sub_resource type="Animation" id="Animation_f0qqu"]
@@ -57,21 +72,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(416, 341), Vector2(497, 341)]
-}
-
-[sub_resource type="Animation" id="Animation_nsof8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(416, 341)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t01g0"]
@@ -101,20 +101,35 @@ position = Vector2(120, 431)
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_dcra0")]
 
-[node name="PlatfromG" parent="." instance=ExtResource("4_uktn6")]
+[node name="PlatformG" parent="." instance=ExtResource("4_uktn6")]
 position = Vector2(368, 452)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PlatfromG"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlatformG"]
 libraries = {
 "": SubResource("AnimationLibrary_wk23q")
 }
 autoplay = "move"
 
-[node name="PlatfromG2" parent="." instance=ExtResource("4_uktn6")]
+[node name="PlatformG2" parent="." instance=ExtResource("4_uktn6")]
 position = Vector2(416, 341)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PlatfromG2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlatformG2"]
 libraries = {
 "": SubResource("AnimationLibrary_t01g0")
 }
 autoplay = "move"
+
+[connection signal="body_entered" from="TileMap/Coins" to="TileMap/Coins" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@36551" to="TileMap/@Area2D@36551" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@36552" to="TileMap/@Area2D@36552" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@36553" to="TileMap/@Area2D@36553" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@36554" to="TileMap/@Area2D@36554" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@36555" to="TileMap/@Area2D@36555" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@36556" to="TileMap/@Area2D@36556" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@36557" to="TileMap/@Area2D@36557" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@36558" to="TileMap/@Area2D@36558" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/Grapes" to="TileMap/Grapes" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@36559" to="TileMap/@Area2D@36559" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@36560" to="TileMap/@Area2D@36560" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@36561" to="TileMap/@Area2D@36561" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@36562" to="TileMap/@Area2D@36562" method="_on_body_entered"]

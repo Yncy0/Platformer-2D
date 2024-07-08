@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_isr88"]
 size = Vector2(32, 8)
 
-[node name="PlatfromG" instance=ExtResource("1_gbmei")]
+[node name="PlatformG" instance=ExtResource("1_gbmei")]
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_iu7qd")
