@@ -3,6 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://dnawk21vy5gol" path="res://assets/brackeys_platformer_assets/music/time_for_adventure.mp3" id="1_j1jkc"]
 
 [node name="MainBGM" type="AudioStreamPlayer"]
+process_mode = 3
 stream = ExtResource("1_j1jkc")
 autoplay = true
 bus = &"BGM"

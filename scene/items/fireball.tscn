@@ -30,6 +30,7 @@ frame_progress = 0.431635
 
 [node name="SFX" parent="." index="1"]
 stream = ExtResource("4_b40b6")
+bus = &"SFX"
 
 [node name="Hitbox" parent="." index="3"]
 collision_layer = 2
