@@ -5,8 +5,10 @@ class_name KillZone extends Area2D
 
 
 func _on_area_entered(area: Area2D) -> void:
-	Engine.time_scale = 0.5
-	timer.start()
+	if area:
+		Engine.time_scale = 0.5
+		area.get_node("CollisionShape2D").queue_free()
+		timer.start()
 
 
 func _on_timer_timeout() -> void:

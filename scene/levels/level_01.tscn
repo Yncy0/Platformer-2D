@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dksswba8ci81m"]
+[gd_scene load_steps=13 format=3 uid="uid://dksswba8ci81m"]
 
 [ext_resource type="TileSet" uid="uid://b0yrhl5jscbfa" path="res://scene/levels/tileset01.tres" id="1_hnayi"]
 [ext_resource type="PackedScene" uid="uid://beqmqsni2pina" path="res://scene/characters/player/_player.tscn" id="2_ai7ew"]
 [ext_resource type="PackedScene" uid="uid://cy5n63m5wv4n2" path="res://scene/gui/menu/pause_menu.tscn" id="3_dcra0"]
 [ext_resource type="PackedScene" uid="uid://c4mu8ity02om" path="res://scene/levels/platforms/platform_g.tscn" id="4_uktn6"]
+[ext_resource type="PackedScene" uid="uid://bwo4f2ubim32d" path="res://scene/levels/kill_zone.tscn" id="5_n766t"]
 
 [sub_resource type="Animation" id="Animation_yewij"]
 length = 0.001
@@ -80,6 +81,8 @@ _data = {
 "move": SubResource("Animation_f0qqu")
 }
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2aesv"]
+
 [node name="Level01" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -119,17 +122,25 @@ libraries = {
 }
 autoplay = "move"
 
+[node name="KillZone" parent="." instance=ExtResource("5_n766t")]
+position = Vector2(0, 537)
+
+[node name="CollisionShape2D" parent="KillZone" index="0"]
+shape = SubResource("WorldBoundaryShape2D_2aesv")
+
 [connection signal="body_entered" from="TileMap/Coins" to="TileMap/Coins" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@36551" to="TileMap/@Area2D@36551" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@36552" to="TileMap/@Area2D@36552" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@36553" to="TileMap/@Area2D@36553" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@36554" to="TileMap/@Area2D@36554" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@36555" to="TileMap/@Area2D@36555" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@36556" to="TileMap/@Area2D@36556" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@36557" to="TileMap/@Area2D@36557" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@36558" to="TileMap/@Area2D@36558" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@44621" to="TileMap/@Area2D@44621" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@44622" to="TileMap/@Area2D@44622" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@44623" to="TileMap/@Area2D@44623" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@44624" to="TileMap/@Area2D@44624" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@44625" to="TileMap/@Area2D@44625" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@44626" to="TileMap/@Area2D@44626" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@44627" to="TileMap/@Area2D@44627" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@44628" to="TileMap/@Area2D@44628" method="_on_body_entered"]
 [connection signal="body_entered" from="TileMap/Grapes" to="TileMap/Grapes" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@36559" to="TileMap/@Area2D@36559" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@36560" to="TileMap/@Area2D@36560" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@36561" to="TileMap/@Area2D@36561" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@36562" to="TileMap/@Area2D@36562" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@44629" to="TileMap/@Area2D@44629" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@44630" to="TileMap/@Area2D@44630" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@44631" to="TileMap/@Area2D@44631" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@44632" to="TileMap/@Area2D@44632" method="_on_body_entered"]
+
+[editable path="KillZone"]
