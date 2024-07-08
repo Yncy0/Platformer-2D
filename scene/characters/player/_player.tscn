@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://beqmqsni2pina"]
+[gd_scene load_steps=56 format=3 uid="uid://beqmqsni2pina"]
 
 [ext_resource type="Texture2D" uid="uid://df7ku1wr285ub" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="2_ej0vx"]
 [ext_resource type="Script" path="res://script/characters/player/_player.gd" id="2_qe20h"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://script/characters/player/jump.gd" id="5_w4wrq"]
 [ext_resource type="Script" path="res://script/characters/player/fall.gd" id="6_eelx4"]
 [ext_resource type="Script" path="res://script/characters/player/hit.gd" id="7_woqvh"]
+[ext_resource type="Script" path="res://script/characters/player/bounce.gd" id="8_00anp"]
 [ext_resource type="PackedScene" uid="uid://haxrple0mnhl" path="res://scene/components/hurtbox.tscn" id="9_34f5u"]
 [ext_resource type="AudioStream" uid="uid://da6xb4qwl2gj5" path="res://assets/brackeys_platformer_assets/sounds/jump.wav" id="9_a0wlx"]
 [ext_resource type="AudioStream" uid="uid://dsgb8mdl0uyxq" path="res://assets/brackeys_platformer_assets/sounds/hurt.wav" id="10_hbpb7"]
@@ -403,6 +404,9 @@ script = ExtResource("5_of2ut")
 [node name="JumpState" type="Node" parent="StateMachine"]
 script = ExtResource("5_w4wrq")
 
+[node name="BounceState" type="Node" parent="StateMachine"]
+script = ExtResource("8_00anp")
+
 [node name="FallState" type="Node" parent="StateMachine"]
 script = ExtResource("6_eelx4")
 
@@ -463,7 +467,7 @@ bus = &"SFX"
 stream = ExtResource("10_hbpb7")
 bus = &"SFX"
 
-[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="Hitbox" to="StateMachine/FallState" method="_on_hitbox_area_entered"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 
 [editable path="Hitbox"]

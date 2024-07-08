@@ -85,9 +85,7 @@ func mount_despawning() -> void:
 	mount_spawn.remove_child(mount_spawn.get_child(0))
 
 
-func _on_hitbox_area_entered(area: Area2D) -> void:
-	if area:
-		bouncing()
+
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:

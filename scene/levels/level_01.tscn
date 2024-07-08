@@ -128,19 +128,4 @@ position = Vector2(0, 537)
 [node name="CollisionShape2D" parent="KillZone" index="0"]
 shape = SubResource("WorldBoundaryShape2D_2aesv")
 
-[connection signal="body_entered" from="TileMap/Coins" to="TileMap/Coins" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@44621" to="TileMap/@Area2D@44621" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@44622" to="TileMap/@Area2D@44622" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@44623" to="TileMap/@Area2D@44623" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@44624" to="TileMap/@Area2D@44624" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@44625" to="TileMap/@Area2D@44625" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@44626" to="TileMap/@Area2D@44626" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@44627" to="TileMap/@Area2D@44627" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@44628" to="TileMap/@Area2D@44628" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/Grapes" to="TileMap/Grapes" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@44629" to="TileMap/@Area2D@44629" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@44630" to="TileMap/@Area2D@44630" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@44631" to="TileMap/@Area2D@44631" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@44632" to="TileMap/@Area2D@44632" method="_on_body_entered"]
-
 [editable path="KillZone"]
