@@ -22,6 +22,7 @@ var projectile_name: String = "fireball"
 @onready var projectile_spawn: Node2D = $ProjectileSpawn
 @onready var sfx_hurt: AudioStreamPlayer = $SFXHurt
 @onready var sfx_jump: AudioStreamPlayer = $SFXJump
+@onready var buffer_jump_timer: Timer = $BufferJumpTimer
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -32,12 +33,15 @@ var direction: float
 var is_riding: bool = false
 var is_hurt: bool = false
 
+var jump_available: bool = false
+
+
 func update_gravity(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("ui_left"):
 		if is_riding:
 			shooting()
 
@@ -73,6 +77,8 @@ func bouncing() -> void:
 func jumping() -> void:
 	velocity.y = JUMP_VELOCITY
 	velocity.x = platform_velocity.x
+	
+	jump_available = false
 
 
 func shooting() -> void:
@@ -83,9 +89,6 @@ func shooting() -> void:
 
 func mount_despawning() -> void:
 	mount_spawn.remove_child(mount_spawn.get_child(0))
-
-
-
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:

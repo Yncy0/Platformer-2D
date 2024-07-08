@@ -12,7 +12,7 @@ func update_input(event: InputEvent) -> void:
 	if event.is_action_released("move_left") or event.is_action_released("move_right"):
 		player.velocity.x = player.direction * player.SPEED/4
 	
-	if event.is_action_pressed("jump"):
+	if event.is_action_pressed("jump") and player.jump_available:
 		change_state.emit("JumpState")
 
 

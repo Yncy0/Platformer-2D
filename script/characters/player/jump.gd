@@ -13,7 +13,7 @@ func enter() -> void:
 
 
 func update_input(event: InputEvent) -> void:
-	if event.is_action_released("jump"):
+	if event.is_action_released("jump") and player.jump_available:
 		if player.velocity.y < 0:
 			player.velocity.y = player.JUMP_VELOCITY/4.0
 
@@ -22,7 +22,7 @@ func update_physics_process(delta: float) -> void:
 	player.update_gravity(delta)
 	player.moving()
 	
-	if player.velocity.y > -3.0 and !player.is_on_floor():
+	if player.velocity.y > -10.0 and !player.is_on_floor():
 		change_state.emit("FallState")
 	
 	if player.is_hurt:
