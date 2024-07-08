@@ -252,6 +252,9 @@ animation = &"idle"
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_qm2hm")
 
+[node name="RayCast2D" parent="." index="2"]
+target_position = Vector2(0, 14)
+
 [node name="HealthComponent" parent="." index="3"]
 max_health = 2
 
