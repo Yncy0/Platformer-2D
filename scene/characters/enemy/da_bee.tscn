@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c55j06df32uoq"]
+[gd_scene load_steps=12 format=3 uid="uid://c55j06df32uoq"]
 
 [ext_resource type="PackedScene" uid="uid://b4gchwqhmg74j" path="res://scene/characters/enemy/_ariborne_enemy.tscn" id="1_uulgt"]
 [ext_resource type="Script" path="res://script/characters/enemy/airborne_enemy/da_bee.gd" id="2_v6rom"]
@@ -43,7 +43,15 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhlk3"]
 radius = 6.08276
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwxbm"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jioox"]
+size = Vector2(20, 3)
+
 [node name="DaBee" instance=ExtResource("1_uulgt")]
+collision_layer = 4
+collision_mask = 0
 script = ExtResource("2_v6rom")
 SPEED = 300.0
 JUMP_VELOCITY = -400.0
@@ -53,6 +61,26 @@ is_patroling = false
 sprite_frames = SubResource("SpriteFrames_w12se")
 animation = &"idle"
 frame_progress = 0.940282
+flip_h = true
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CircleShape2D_qhlk3")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("RectangleShape2D_pwxbm")
+debug_color = Color(0.132262, 0.646493, 0, 0.42)
+
+[node name="Hitbox" parent="." index="4"]
+damage = 1.0
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_jioox")
+debug_color = Color(0.983971, 0, 0.348021, 0.42)
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="5"]
+target_position = Vector2(0, 100)
+collision_mask = 2
+
+[editable path="Hurtbox"]
+[editable path="Hitbox"]
