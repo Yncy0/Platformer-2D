@@ -8,13 +8,16 @@ extends Control
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause") and pause_panel.visible == false:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		pause_panel.visible = true
 		get_tree().paused = true
 	elif event.is_action_pressed("pause") and pause_panel.visible == true:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		pause_panel.visible = false
 		get_tree().paused = false
 	
 	if event.is_action("pause") and settings_menu.visible == true:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		pause_panel.visible = false
 		settings_menu.visible = false
 		get_tree().paused = false

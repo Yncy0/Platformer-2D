@@ -34,6 +34,10 @@ var jump_available: bool = false
 var bounce_available: bool = false
 
 
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+
 func update_gravity(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
