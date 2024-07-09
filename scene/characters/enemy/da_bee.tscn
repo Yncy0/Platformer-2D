@@ -95,6 +95,7 @@ debug_color = Color(0.695089, 0.282112, 1, 0.42)
 
 [node name="ShootTimer" type="Timer" parent="." index="7"]
 
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="body_entered" from="PlayerDetect" to="." method="_on_player_detect_body_entered"]
 [connection signal="body_exited" from="PlayerDetect" to="." method="_on_player_detect_body_exited"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

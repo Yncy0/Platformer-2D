@@ -47,3 +47,8 @@ func _on_player_detect_body_entered(body: Node2D) -> void:
 func _on_player_detect_body_exited(body: Node2D) -> void:
 	if body is Player:
 		player_detected = false
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if area is Hitbox:
+		self.queue_free()
