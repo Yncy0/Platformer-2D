@@ -419,6 +419,9 @@ script = ExtResource("6_eelx4")
 unique_name_in_owner = true
 one_shot = true
 
+[node name="CoyoterTimer" type="Timer" parent="StateMachine/FallState"]
+one_shot = true
+
 [node name="HitState" type="Node" parent="StateMachine"]
 script = ExtResource("7_woqvh")
 
