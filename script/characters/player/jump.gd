@@ -19,7 +19,7 @@ func enter() -> void:
 func update_input(event: InputEvent) -> void:
 	if event.is_action_released("jump"):
 		if player.velocity.y < 0:
-			player.velocity.y = player.JUMP_VELOCITY/4.0
+			player.velocity.y = player.JUMP_VELOCITY/3.0
 
 
 func update_physics_process(delta: float) -> void:

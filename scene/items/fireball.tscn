@@ -20,11 +20,13 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uc8bx"]
-radius = 4.0
+radius = 5.0
 
 [node name="Fireball" instance=ExtResource("1_h7tly")]
+projectile_speed = 150.0
 
 [node name="AnimatedSprite2D" parent="." index="0"]
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_joyfm")
 frame_progress = 0.431635
 
@@ -38,7 +40,7 @@ collision_mask = 4
 damage = 5.0
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2(3, 0)
+position = Vector2(5, 1)
 shape = SubResource("CircleShape2D_uc8bx")
 debug_color = Color(1, 0.00584033, 0.0581184, 0.42)
 
