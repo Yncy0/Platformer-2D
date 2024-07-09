@@ -5,6 +5,7 @@ class_name HitState extends PlayerState
 
 
 func enter() -> void:
+	player.idling()
 	player.animated_sprite_2d.play("hit")
 	player.animation_player.play("hit")
 	sfx_hurt.play()
