@@ -2,6 +2,9 @@ extends Node2D
 
 
 @export var projectile_speed: float = 100.0
+@export var shoot_axis_x: bool = false
+@export var shhot_axis_y: bool = false
+
 @onready var sfx: AudioStreamPlayer = $SFX
 
 
@@ -11,7 +14,10 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	position += transform.x * projectile_speed * delta
+	if shoot_axis_x:
+		position += transform.x * projectile_speed * delta
+	elif shhot_axis_y:
+		position += transform.y * projectile_speed * delta
 
 
 func _on_timer_timeout() -> void:

@@ -50,6 +50,7 @@ size = Vector2(10, 10)
 size = Vector2(20, 3)
 
 [node name="DaBee" instance=ExtResource("1_uulgt")]
+z_index = 2
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("2_v6rom")
@@ -81,6 +82,8 @@ debug_color = Color(0.983971, 0, 0.348021, 0.42)
 [node name="RayCast2D" type="RayCast2D" parent="." index="5"]
 target_position = Vector2(0, 100)
 collision_mask = 2
+
+[node name="ProjectileSpawn" type="Node2D" parent="." index="6"]
 
 [editable path="Hurtbox"]
 [editable path="Hitbox"]

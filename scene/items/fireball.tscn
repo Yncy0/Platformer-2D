@@ -24,6 +24,7 @@ radius = 5.0
 
 [node name="Fireball" instance=ExtResource("1_h7tly")]
 projectile_speed = 150.0
+shoot_axis_x = true
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 scale = Vector2(1.5, 1.5)

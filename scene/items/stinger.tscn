@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://qgcudmcllosq"]
+
+[ext_resource type="PackedScene" uid="uid://dvo3bdc1h751c" path="res://scene/items/_projectiles.tscn" id="1_nf48x"]
+[ext_resource type="Texture2D" uid="uid://dgy82deg2dyr1" path="res://assets/custom/sprites/Stinger.png" id="2_5pny2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_458lr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5pny2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drn2x"]
+size = Vector2(6, 6)
+
+[node name="Stinger" instance=ExtResource("1_nf48x")]
+shhot_axis_y = true
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_458lr")
+
+[node name="Hitbox" parent="." index="3"]
+collision_layer = 4
+collision_mask = 2
+damage = 1.0
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("RectangleShape2D_drn2x")
+debug_color = Color(0.978617, 0, 0.394741, 0.42)
+
+[editable path="Hitbox"]
