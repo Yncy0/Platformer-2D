@@ -8,12 +8,12 @@ class_name DaBee extends AirborneEnemy
 
 @onready var projectile = preload("res://scene/items/stinger.tscn")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var projectile_spawn: Node2D = $ProjectileSpawn
 @onready var shoot_timer: Timer = $ShootTimer
 
 
 var shoot_available: bool = true
+var player_detected: bool = false
 
 
 func _ready() -> void:
@@ -21,12 +21,16 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if ray_cast_2d.is_colliding():
-		var r = ray_cast_2d.get_collider()
-		if r is Player and shoot_available:
-			spawn_projectile()
-			shoot_available = false
-			shoot_timer.start(1.0)
+	if player_detected and shoot_available:
+		shoot_available = false
+		spawn_projectile()
+		shoot_timer.start(1.0)
+	#if ray_cast_2d.is_colliding():
+		#var r = ray_cast_2d.get_collider()
+		#if r is Player and shoot_available:
+			#spawn_projectile()
+			#shoot_available = false
+			#shoot_timer.start(1.0)
 	
 	move_and_slide()
 
@@ -39,3 +43,13 @@ func spawn_projectile() -> void:
 
 func _on_shoot_timer_timeout() -> void:
 	shoot_available = true
+
+
+func _on_player_detect_body_entered(body: Node2D) -> void:
+	if body is Player:
+		player_detected = true
+
+
+func _on_player_detect_body_exited(body: Node2D) -> void:
+	if body is Player:
+		player_detected = false

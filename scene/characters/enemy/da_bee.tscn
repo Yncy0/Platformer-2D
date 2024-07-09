@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c55j06df32uoq"]
+[gd_scene load_steps=13 format=3 uid="uid://c55j06df32uoq"]
 
 [ext_resource type="PackedScene" uid="uid://b4gchwqhmg74j" path="res://scene/characters/enemy/_ariborne_enemy.tscn" id="1_uulgt"]
 [ext_resource type="Script" path="res://script/characters/enemy/airborne_enemy/da_bee.gd" id="2_v6rom"]
@@ -49,6 +49,9 @@ size = Vector2(10, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jioox"]
 size = Vector2(20, 3)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rup1h"]
+size = Vector2(249, 322)
+
 [node name="DaBee" instance=ExtResource("1_uulgt")]
 z_index = 2
 collision_layer = 4
@@ -79,14 +82,21 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_jioox")
 debug_color = Color(0.983971, 0, 0.348021, 0.42)
 
-[node name="RayCast2D" type="RayCast2D" parent="." index="5"]
-target_position = Vector2(0, 100)
+[node name="PlayerDetect" type="Area2D" parent="." index="5"]
+collision_layer = 0
 collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetect" index="0"]
+position = Vector2(-0.5, 162)
+shape = SubResource("RectangleShape2D_rup1h")
+debug_color = Color(0.695089, 0.282112, 1, 0.42)
 
 [node name="ProjectileSpawn" type="Node2D" parent="." index="6"]
 
 [node name="ShootTimer" type="Timer" parent="." index="7"]
 
+[connection signal="body_entered" from="PlayerDetect" to="." method="_on_player_detect_body_entered"]
+[connection signal="body_exited" from="PlayerDetect" to="." method="_on_player_detect_body_exited"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
 
 [editable path="Hurtbox"]
