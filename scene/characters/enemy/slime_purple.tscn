@@ -233,7 +233,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1al3o"]
-size = Vector2(12, 3)
+size = Vector2(12, 13.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plrfg"]
 size = Vector2(14, 10)
@@ -264,7 +264,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2(0, -5)
+position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_1al3o")
 debug_color = Color(0.100042, 0.648284, 3.85046e-07, 0.42)
 

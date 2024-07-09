@@ -233,7 +233,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cuovw"]
-size = Vector2(12, 3.5)
+size = Vector2(12, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxler"]
 size = Vector2(14, 10)
@@ -265,7 +265,7 @@ libraries = {
 autoplay = "idle"
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2(0, -4.25)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_cuovw")
 debug_color = Color(0, 0.648917, 0.164104, 0.42)
 
