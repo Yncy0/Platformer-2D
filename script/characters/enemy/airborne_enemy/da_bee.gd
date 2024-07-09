@@ -2,7 +2,6 @@ class_name DaBee extends AirborneEnemy
 
 
 @export var SPEED: float = 300.0
-@export var JUMP_VELOCITY: float = -400.0
 @export var is_patroling: bool = false
 
 

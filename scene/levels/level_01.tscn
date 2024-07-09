@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dksswba8ci81m"]
+[gd_scene load_steps=16 format=3 uid="uid://dksswba8ci81m"]
 
 [ext_resource type="TileSet" uid="uid://b0yrhl5jscbfa" path="res://scene/levels/tileset01.tres" id="1_hnayi"]
 [ext_resource type="PackedScene" uid="uid://beqmqsni2pina" path="res://scene/characters/player/_player.tscn" id="2_ai7ew"]
@@ -42,43 +42,6 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_yewij"),
 "move": SubResource("Animation_1wjme")
-}
-
-[sub_resource type="Animation" id="Animation_nsof8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(416, 341)]
-}
-
-[sub_resource type="Animation" id="Animation_f0qqu"]
-resource_name = "move"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(416, 341), Vector2(497, 341)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_t01g0"]
-_data = {
-"RESET": SubResource("Animation_nsof8"),
-"move": SubResource("Animation_f0qqu")
 }
 
 [sub_resource type="Animation" id="Animation_jmsac"]
@@ -193,19 +156,6 @@ libraries = {
 }
 autoplay = "move"
 
-[node name="PlatformGrass2" parent="." instance=ExtResource("4_uktn6")]
-position = Vector2(416, 341)
-
-[node name="Sprite2D" parent="PlatformGrass2" index="0"]
-region_enabled = true
-region_rect = Rect2(16, 32, 32, 8)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PlatformGrass2"]
-libraries = {
-"": SubResource("AnimationLibrary_t01g0")
-}
-autoplay = "move"
-
 [node name="PlatformGrass3" parent="." instance=ExtResource("4_uktn6")]
 position = Vector2(1280, 181)
 
@@ -239,7 +189,6 @@ position = Vector2(0, 554)
 shape = SubResource("WorldBoundaryShape2D_2aesv")
 
 [editable path="PlatformGrass"]
-[editable path="PlatformGrass2"]
 [editable path="PlatformGrass3"]
 [editable path="PlatformGrass4"]
 [editable path="KillZone"]

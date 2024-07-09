@@ -18,6 +18,7 @@ animations = [{
 size = Vector2(6, 6)
 
 [node name="Stinger" instance=ExtResource("1_nf48x")]
+projectile_speed = 150.0
 shhot_axis_y = true
 
 [node name="AnimatedSprite2D" parent="." index="0"]
