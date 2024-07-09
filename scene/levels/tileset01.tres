@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://b0yrhl5jscbfa"]
+[gd_resource type="TileSet" load_steps=18 format=3 uid="uid://b0yrhl5jscbfa"]
 
 [ext_resource type="Texture2D" uid="uid://5usctshlve13" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="1_hxxvy"]
 [ext_resource type="Texture2D" uid="uid://c3xomxff5cf48" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_w6o1t"]
@@ -7,6 +7,27 @@
 [ext_resource type="PackedScene" uid="uid://c41tgwcyem62e" path="res://scene/pickups/coins.tscn" id="4_nrj62"]
 [ext_resource type="PackedScene" uid="uid://c5fo1fx2f7wbr" path="res://scene/pickups/grapes.tscn" id="6_ws8lu"]
 [ext_resource type="PackedScene" uid="uid://hjndu3hhxfpe" path="res://scene/characters/neutral/yellow_lizard.tscn" id="7_0nj2q"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_62r5c"]
+tile_data = PackedInt32Array(0, 131073, 4, 65536, 131073, 5, 131072, 131073, 6, 1, 196609, 4, 65537, 196609, 5, 131073, 196609, 6, 196609, 196609, 8, 2, 262145, 4, 65538, 262145, 5, 131074, 262145, 6)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_hicpj"]
+tile_data = PackedInt32Array(0, 327681, 3, 65536, 327681, 4, 131072, 327681, 4, 196608, 327681, 5)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_4srp5"]
+tile_data = PackedInt32Array(0, 327681, 3, 65536, 327681, 4, 131072, 327681, 5)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_uitx0"]
+tile_data = PackedInt32Array(0, 131073, 4, 65536, 131073, 5, 131072, 131073, 6, 1, 196609, 4, 65537, 196609, 5, 131073, 196609, 6, 196609, 196609, 7, 262145, 196609, 8, 2, 262145, 4, 65538, 262145, 5, 131074, 262145, 6)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_r4elf"]
+tile_data = PackedInt32Array(0, 327681, 3, 65536, 327681, 5)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_qh25j"]
+tile_data = PackedInt32Array(0, 131073, 4, 65536, 131073, 5, 131072, 131073, 6, 1, 196609, 4, 65537, 196609, 5, 131073, 196609, 6, 196609, 196609, 7, 262145, 196609, 8, 327681, 196609, 7, 393217, 196609, 8, 2, 262145, 4, 65538, 262145, 5, 131074, 262145, 6)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_7ayfo"]
+tile_data = PackedInt32Array(0, 327681, 3, 65536, 327681, 4, 131072, 327681, 4, 196608, 327681, 4, 262144, 327681, 5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xl4bb"]
 texture = ExtResource("1_hxxvy")
@@ -482,3 +503,10 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xl4bb")
 sources/1 = SubResource("TileSetAtlasSource_fjtay")
 sources/2 = SubResource("TileSetScenesCollectionSource_vv4xq")
+pattern_0 = SubResource("TileMapPattern_62r5c")
+pattern_1 = SubResource("TileMapPattern_hicpj")
+pattern_2 = SubResource("TileMapPattern_4srp5")
+pattern_3 = SubResource("TileMapPattern_uitx0")
+pattern_4 = SubResource("TileMapPattern_r4elf")
+pattern_5 = SubResource("TileMapPattern_qh25j")
+pattern_6 = SubResource("TileMapPattern_7ayfo")

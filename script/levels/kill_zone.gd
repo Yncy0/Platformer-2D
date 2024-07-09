@@ -8,7 +8,7 @@ func _on_area_entered(area: Area2D) -> void:
 	if area:
 		Engine.time_scale = 0.5
 		area.get_node("CollisionShape2D").queue_free()
-		timer.start()
+		timer.start(0.5)
 
 
 func _on_timer_timeout() -> void:
