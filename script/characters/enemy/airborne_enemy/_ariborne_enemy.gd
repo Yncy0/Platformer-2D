@@ -1,0 +1,1 @@
+class_name AirborneEnemy extends CharacterBody2D
