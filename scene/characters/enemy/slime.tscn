@@ -106,8 +106,9 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_s8ulu"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lurra"]
 radius = 6.0
+height = 12.0
 
 [sub_resource type="Animation" id="Animation_843pv"]
 length = 0.001
@@ -233,7 +234,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cuovw"]
-size = Vector2(12, 13)
+size = Vector2(14, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxler"]
 size = Vector2(14, 10)
@@ -250,10 +251,10 @@ animation = &"dead"
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 3)
-shape = SubResource("CircleShape2D_s8ulu")
+shape = SubResource("CapsuleShape2D_lurra")
 
 [node name="RayCast2D" parent="." index="2"]
-target_position = Vector2(0, 14)
+target_position = Vector2(0, 15)
 
 [node name="HealthComponent" parent="." index="3"]
 max_health = 1
