@@ -2,8 +2,10 @@ class_name FallState extends PlayerState
 
 
 @onready var jump_buffer_timer: Timer = %JumpBufferTimer
+@onready var coyoter_timer: Timer = %CoyoterTimer
 
 var jump_buffer_available: bool = true
+
 
 func enter() -> void:
 	if !player.is_riding:
@@ -13,11 +15,16 @@ func enter() -> void:
 		player.animated_sprite_2d.play("mount")
 	
 	jump_buffer_timer.start(0.5)
+	coyoter_timer.start(0.1)
 
 
 func update_input(event: InputEvent) -> void:
-	if event.is_action_pressed("jump") and jump_buffer_available:
-		change_state.emit("JumpState")
+	if event.is_action_pressed("jump"):
+		if jump_buffer_available:
+			change_state.emit("JumpState")
+		if player.jump_available:
+			change_state.emit("JumpState")
+			#player.jump_available = false
 
 
 func update_physics_process(delta: float) -> void:
@@ -39,7 +46,10 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		change_state.emit("BounceState")
 
 
-
 func _on_jump_buffer_timer_timeout() -> void:
 	jump_buffer_available = false
 
+
+
+func _on_coyoter_timer_timeout() -> void:
+	player.jump_available = false

@@ -420,6 +420,7 @@ unique_name_in_owner = true
 one_shot = true
 
 [node name="CoyoterTimer" type="Timer" parent="StateMachine/FallState"]
+unique_name_in_owner = true
 one_shot = true
 
 [node name="HitState" type="Node" parent="StateMachine"]
@@ -477,6 +478,7 @@ shape = SubResource("RectangleShape2D_bk1d1")
 debug_color = Color(3.70607e-06, 0.643004, 0.307854, 0.42)
 
 [connection signal="timeout" from="StateMachine/FallState/JumpBufferTimer" to="StateMachine/FallState" method="_on_jump_buffer_timer_timeout"]
+[connection signal="timeout" from="StateMachine/FallState/CoyoterTimer" to="StateMachine/FallState" method="_on_coyoter_timer_timeout"]
 [connection signal="area_entered" from="Hitbox" to="StateMachine/FallState" method="_on_hitbox_area_entered"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 
