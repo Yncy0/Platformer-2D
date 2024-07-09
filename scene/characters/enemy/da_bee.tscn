@@ -85,5 +85,9 @@ collision_mask = 2
 
 [node name="ProjectileSpawn" type="Node2D" parent="." index="6"]
 
+[node name="ShootTimer" type="Timer" parent="." index="7"]
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
+
 [editable path="Hurtbox"]
 [editable path="Hitbox"]

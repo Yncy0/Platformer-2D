@@ -380,7 +380,7 @@ _data = {
 size = Vector2(11, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bk1d1"]
-size = Vector2(10, 16)
+size = Vector2(10, 19)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
@@ -473,7 +473,7 @@ collision_layer = 2
 collision_mask = 5
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2(0, 2)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_bk1d1")
 debug_color = Color(3.70607e-06, 0.643004, 0.307854, 0.42)
 

@@ -25,11 +25,14 @@ sprite_frames = SubResource("SpriteFrames_458lr")
 
 [node name="Hitbox" parent="." index="3"]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 damage = 1.0
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 shape = SubResource("RectangleShape2D_drn2x")
 debug_color = Color(0.978617, 0, 0.394741, 0.42)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 
 [editable path="Hitbox"]

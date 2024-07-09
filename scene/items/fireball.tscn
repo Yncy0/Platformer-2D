@@ -37,7 +37,7 @@ bus = &"SFX"
 
 [node name="Hitbox" parent="." index="3"]
 collision_layer = 2
-collision_mask = 4
+collision_mask = 5
 damage = 5.0
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
