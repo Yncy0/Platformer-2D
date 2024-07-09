@@ -99,5 +99,6 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		is_hurt = true
 
 
-func _on_hitbox_area_entered(_area: Area2D) -> void:
-	bounce_available = true
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.get_parent() is GroundedEnemy or area.get_parent() is AirborneEnemy:
+		bounce_available = true
