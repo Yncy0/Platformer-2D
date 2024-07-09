@@ -410,6 +410,10 @@ script = ExtResource("8_00anp")
 [node name="FallState" type="Node" parent="StateMachine"]
 script = ExtResource("6_eelx4")
 
+[node name="JumpBufferTimer" type="Timer" parent="StateMachine/FallState"]
+unique_name_in_owner = true
+one_shot = true
+
 [node name="HitState" type="Node" parent="StateMachine"]
 script = ExtResource("7_woqvh")
 
@@ -467,6 +471,7 @@ bus = &"SFX"
 stream = ExtResource("10_hbpb7")
 bus = &"SFX"
 
+[connection signal="timeout" from="StateMachine/FallState/JumpBufferTimer" to="StateMachine/FallState" method="_on_jump_buffer_timer_timeout"]
 [connection signal="area_entered" from="Hitbox" to="StateMachine/FallState" method="_on_hitbox_area_entered"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 

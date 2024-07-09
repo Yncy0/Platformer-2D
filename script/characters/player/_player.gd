@@ -33,7 +33,6 @@ var is_riding: bool = false
 var is_hurt: bool = false
 
 var jump_available: bool = false
-var jump_buffer_timer: float = 0.0
 
 
 func update_gravity(delta: float) -> void:
