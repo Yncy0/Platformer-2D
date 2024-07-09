@@ -31,6 +31,7 @@ var is_riding: bool = false
 var is_hurt: bool = false
 
 var jump_available: bool = false
+var bounce_available: bool = false
 
 
 func update_gravity(delta: float) -> void:
@@ -69,6 +70,7 @@ func moving_sprite_flip() -> void:
 
 func bouncing() -> void:
 	velocity.y = bounce_velocity
+	bounce_available = false
 
 
 func jumping() -> void:
@@ -91,3 +93,7 @@ func mount_despawning() -> void:
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if area is Hitbox:
 		is_hurt = true
+
+
+func _on_hitbox_area_entered(_area: Area2D) -> void:
+	bounce_available = true

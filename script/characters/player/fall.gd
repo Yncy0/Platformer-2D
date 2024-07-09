@@ -37,18 +37,15 @@ func update_physics_process(delta: float) -> void:
 	if player.is_hurt:
 		change_state.emit("HitState") 
 	
+	if player.bounce_available:
+		change_state.emit("BounceState")
+	
 	player.move_and_slide()
 	player.platform_velocity = player.get_platform_velocity()
 
 
-func _on_hitbox_area_entered(area: Area2D) -> void:
-	if area:
-		change_state.emit("BounceState")
-
-
 func _on_jump_buffer_timer_timeout() -> void:
 	jump_buffer_available = false
-
 
 
 func _on_coyoter_timer_timeout() -> void:

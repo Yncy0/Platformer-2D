@@ -25,12 +25,6 @@ func _physics_process(_delta: float) -> void:
 		shoot_available = false
 		spawn_projectile()
 		shoot_timer.start(1.0)
-	#if ray_cast_2d.is_colliding():
-		#var r = ray_cast_2d.get_collider()
-		#if r is Player and shoot_available:
-			#spawn_projectile()
-			#shoot_available = false
-			#shoot_timer.start(1.0)
 	
 	move_and_slide()
 

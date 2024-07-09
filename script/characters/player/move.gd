@@ -29,6 +29,9 @@ func update_physics_process(delta: float) -> void:
 	if player.is_hurt:
 		change_state.emit("HitState")
 	
+	if player.bounce_available:
+		change_state.emit("BounceState")
+	
 	player.move_and_slide()
 	player.platform_velocity = player.get_platform_velocity()
 
