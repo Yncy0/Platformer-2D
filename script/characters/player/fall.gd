@@ -42,4 +42,4 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 
 func _on_jump_buffer_timer_timeout() -> void:
 	jump_buffer_available = false
-	print("CAN'T JUMP")
+

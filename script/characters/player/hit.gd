@@ -1,10 +1,13 @@
 class_name HitState extends PlayerState
 
 
+@onready var sfx_hurt: AudioStreamPlayer = %SFXHurt
+
+
 func enter() -> void:
 	player.animated_sprite_2d.play("hit")
 	player.animation_player.play("hit")
-	player.sfx_hurt.play()
+	sfx_hurt.play()
 	
 	if player.is_riding:
 		player.animation_player.play("unmount")

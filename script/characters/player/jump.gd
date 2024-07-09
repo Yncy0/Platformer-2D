@@ -1,9 +1,12 @@
 class_name JumpState extends PlayerState
 
 
+@onready var sfx_jump: AudioStreamPlayer = %SFXJump
+
+
 func enter() -> void:
 	player.jumping()
-	player.sfx_jump.play()
+	sfx_jump.play()
 	
 	
 	if !player.is_riding:
