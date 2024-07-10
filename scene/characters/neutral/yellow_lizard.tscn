@@ -109,6 +109,7 @@ autoplay = "move"
 shape = SubResource("CapsuleShape2D_s2qmd")
 
 [node name="RayCast2D" type="RayCast2D" parent="." index="3"]
+target_position = Vector2(0, 13)
 
 [node name="MountArea" parent="." index="4" instance=ExtResource("3_yg8q5")]
 collision_layer = 8
