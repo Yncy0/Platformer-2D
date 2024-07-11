@@ -79,7 +79,7 @@ func bouncing() -> void:
 
 func jumping() -> void:
 	velocity.y = JUMP_VELOCITY
-	velocity.x = platform_velocity.x
+	#velocity.x = platform_velocity.x
 	
 	jump_available = false
 

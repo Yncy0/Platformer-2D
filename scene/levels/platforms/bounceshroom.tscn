@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://cnems21jmp7ey"]
+
+[ext_resource type="Script" path="res://script/levels/bounceshroom.gd" id="1_62li1"]
+[ext_resource type="Texture2D" uid="uid://bh28cf4i0f0uf" path="res://assets/custom/sprites/Mushroom_1.png" id="1_luero"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lx2k5"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pq3s"]
+atlas = ExtResource("1_luero")
+region = Rect2(96, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2utx"]
+atlas = ExtResource("1_luero")
+region = Rect2(120, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3jhs"]
+atlas = ExtResource("1_luero")
+region = Rect2(144, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svawx"]
+atlas = ExtResource("1_luero")
+region = Rect2(120, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02g6w"]
+atlas = ExtResource("1_luero")
+region = Rect2(96, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fn7gx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pq3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2utx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3jhs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svawx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02g6w")
+}],
+"loop": false,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hy8ui"]
+size = Vector2(14, 4)
+
+[node name="Bounceshroom" type="StaticBody2D"]
+script = ExtResource("1_62li1")
+bounce_velocity = -1500.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lx2k5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4)
+sprite_frames = SubResource("SpriteFrames_fn7gx")
+frame = 4
+frame_progress = 1.0
+
+[node name="BounceArea" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BounceArea"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_hy8ui")
+debug_color = Color(0.609243, 0.362506, 1, 0.42)
+
+[connection signal="body_entered" from="BounceArea" to="." method="_on_bounce_area_body_entered"]
