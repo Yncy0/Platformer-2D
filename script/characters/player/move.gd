@@ -10,7 +10,7 @@ func enter() -> void:
 
 func update_input(event: InputEvent) -> void:
 	if event.is_action_released("move_left") or event.is_action_released("move_right"):
-		player.velocity.x = player.platform_velocity.x/4
+		player.velocity.x = player.platform_velocity.x/4.0
 	
 	if event.is_action_pressed("jump") and player.jump_available:
 		change_state.emit("JumpState")

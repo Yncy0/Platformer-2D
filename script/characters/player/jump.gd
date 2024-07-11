@@ -20,6 +20,9 @@ func update_input(event: InputEvent) -> void:
 	if event.is_action_released("jump"):
 		if player.velocity.y < 0:
 			player.velocity.y = player.JUMP_VELOCITY/3.0
+	
+	if event.is_action_released("move_left") or event.is_action_released("move_right"):
+		player.velocity.x = player.platform_velocity.x/4.0
 
 
 func update_physics_process(delta: float) -> void:
