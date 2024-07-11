@@ -4,6 +4,8 @@ class_name Player extends CharacterBody2D
 @export var SPEED: float = 300.0
 @export var JUMP_VELOCITY:float = -400.0
 @export var bounce_velocity: float = -100.0
+@export var spawn_point: Node2D
+@export var checkpoint: Node2D
 
 
 @onready var mounts: Dictionary = {
@@ -33,9 +35,13 @@ var is_hurt: bool = false
 var jump_available: bool = false
 var bounce_available: bool = false
 
+var on_checkpoint: bool = false
+
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	LevelManager.player = self
+	LevelManager.player_spawnpoint()
 
 
 func update_gravity(delta: float) -> void:
