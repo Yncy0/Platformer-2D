@@ -9,7 +9,7 @@ func update_physics_process(delta: float) -> void:
 	player.update_gravity(delta)
 	player.moving()
 	
-	if player.velocity.y > -3.0 and !player.is_on_floor():
+	if player.velocity.y > 0:
 		change_state.emit("FallState")
 	
 	player.move_and_slide()
