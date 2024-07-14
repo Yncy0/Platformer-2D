@@ -1,9 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0bhl4yumdcu3"]
+[gd_scene load_steps=6 format=3 uid="uid://d0bhl4yumdcu3"]
 
 [ext_resource type="Script" path="res://script/levels/checkpoint.gd" id="1_md1wn"]
+[ext_resource type="Script" path="res://script/items/explosion_particles.gd" id="2_h7pnj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lh844"]
 size = Vector2(20, 55)
+
+[sub_resource type="Curve" id="Curve_i3e8l"]
+_data = [Vector2(0, 0.989011), 0.0, 0.0, 0, 0, Vector2(0.977528, 0.043956), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_bhij4"]
+colors = PackedColorArray(0.772549, 0, 0, 1, 1, 1, 0.54902, 1)
 
 [node name="Checkpoint" type="Node2D"]
 script = ExtResource("1_md1wn")
@@ -15,5 +23,20 @@ collision_mask = 3
 position = Vector2(0, -17.5)
 shape = SubResource("RectangleShape2D_lh844")
 debug_color = Color(0.774316, 0.441675, 3.85046e-07, 0.42)
+
+[node name="ExplosionParticles" type="CPUParticles2D" parent="."]
+amount = 1000
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(0, -100)
+radial_accel_min = -38.39
+radial_accel_max = 7.08
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_i3e8l")
+color_ramp = SubResource("Gradient_bhij4")
+script = ExtResource("2_h7pnj")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
