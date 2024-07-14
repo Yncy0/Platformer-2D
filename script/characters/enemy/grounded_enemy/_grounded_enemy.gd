@@ -76,7 +76,6 @@ func hit() -> void:
 
 func dead() -> void:
 	velocity.x = 0.0
-	animated_sprite_2d.play("dead")
 	animation_player.play("dead")
 
 

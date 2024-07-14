@@ -1,24 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://cf83jtxnvs012"]
+[gd_scene load_steps=21 format=3 uid="uid://cf83jtxnvs012"]
 
 [ext_resource type="PackedScene" uid="uid://c1we2whqy5r26" path="res://scene/characters/enemy/_grounded_enemy.tscn" id="1_2yn2r"]
 [ext_resource type="Texture2D" uid="uid://c7llwb5hvy6il" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="2_fcko2"]
 [ext_resource type="Script" path="res://script/characters/enemy/grounded_enemy/_grounded_enemy.gd" id="2_l7wls"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fs7kp"]
-atlas = ExtResource("2_fcko2")
-region = Rect2(72, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r82tv"]
-atlas = ExtResource("2_fcko2")
-region = Rect2(48, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wq0cx"]
-atlas = ExtResource("2_fcko2")
-region = Rect2(24, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_44v84"]
-atlas = ExtResource("2_fcko2")
-region = Rect2(0, 0, 24, 24)
+[ext_resource type="Script" path="res://script/items/explosion_particles.gd" id="4_a6kna"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_psb2w"]
 atlas = ExtResource("2_fcko2")
@@ -54,23 +39,6 @@ region = Rect2(72, 24, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mwoyr"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fs7kp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r82tv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wq0cx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_44v84")
-}],
-"loop": false,
-"name": &"dead",
-"speed": 7.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_psb2w")
@@ -160,6 +128,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ExplosionParticles:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_8ftwi"]
 resource_name = "dead"
@@ -183,7 +163,7 @@ tracks/1/path = NodePath("AnimatedSprite2D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.5),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -226,6 +206,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ExplosionParticles:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dwcoa"]
 _data = {
@@ -239,6 +231,10 @@ size = Vector2(14, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxler"]
 size = Vector2(14, 10)
 
+[sub_resource type="Curve" id="Curve_i3e8l"]
+_data = [Vector2(0, 0.989011), 0.0, 0.0, 0, 0, Vector2(0.977528, 0.043956), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="Slime" instance=ExtResource("1_2yn2r")]
 collision_layer = 4
 script = ExtResource("2_l7wls")
@@ -247,7 +243,7 @@ SPEED = 50.0
 [node name="AnimatedSprite2D" parent="." index="0"]
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_mwoyr")
-animation = &"dead"
+animation = &"hit"
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 3)
@@ -278,6 +274,22 @@ damage = 1.0
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_yxler")
 debug_color = Color(0.991105, 0, 0.269896, 0.42)
+
+[node name="ExplosionParticles" type="CPUParticles2D" parent="." index="8"]
+emitting = false
+amount = 60
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_i3e8l")
+script = ExtResource("4_a6kna")
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 
