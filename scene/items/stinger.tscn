@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://qgcudmcllosq"]
+[gd_scene load_steps=7 format=3 uid="uid://qgcudmcllosq"]
 
 [ext_resource type="PackedScene" uid="uid://dvo3bdc1h751c" path="res://scene/items/_projectiles.tscn" id="1_nf48x"]
 [ext_resource type="Texture2D" uid="uid://dgy82deg2dyr1" path="res://assets/custom/sprites/Stinger.png" id="2_5pny2"]
+[ext_resource type="Script" path="res://script/items/stinger.gd" id="2_i855w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_458lr"]
 animations = [{
@@ -17,8 +18,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drn2x"]
 size = Vector2(6, 6)
 
+[sub_resource type="Curve" id="Curve_mcgm1"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.853933, 0.142857), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="Stinger" instance=ExtResource("1_nf48x")]
-projectile_speed = 150.0
+script = ExtResource("2_i855w")
 shhot_axis_y = true
 
 [node name="AnimatedSprite2D" parent="." index="0"]
@@ -33,7 +38,22 @@ damage = 1.0
 shape = SubResource("RectangleShape2D_drn2x")
 debug_color = Color(0.978617, 0, 0.394741, 0.42)
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="ExplosionParticles" type="CPUParticles2D" parent="." index="4"]
+emitting = false
+amount = 60
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+direction = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+scale_amount_curve = SubResource("Curve_mcgm1")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="finished" from="ExplosionParticles" to="." method="_on_explosion_particles_finished"]
 
 [editable path="Hitbox"]

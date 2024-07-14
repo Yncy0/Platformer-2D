@@ -20,6 +20,11 @@ func _physics_process(delta: float) -> void:
 		position += transform.y * projectile_speed * delta
 
 
+func disable_visuals(animated_sprite: AnimatedSprite2D, area: Hitbox) -> void:
+	animated_sprite.queue_free()
+	area.queue_free()
+
+
 func _on_timer_timeout() -> void:
 	queue_free()
 
