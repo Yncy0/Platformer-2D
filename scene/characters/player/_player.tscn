@@ -459,6 +459,7 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="Hitbox" parent="." instance=ExtResource("4_pbh47")]
+visible = false
 collision_layer = 2
 collision_mask = 4
 damage = 1.0
@@ -469,6 +470,7 @@ shape = SubResource("RectangleShape2D_dseq4")
 debug_color = Color(0.994374, 0, 0.223101, 0.42)
 
 [node name="Hurtbox" parent="." instance=ExtResource("9_34f5u")]
+visible = false
 collision_layer = 2
 collision_mask = 5
 

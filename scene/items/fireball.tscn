@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://fon6wurhl4uk"]
+[gd_scene load_steps=9 format=3 uid="uid://fon6wurhl4uk"]
 
 [ext_resource type="PackedScene" uid="uid://dvo3bdc1h751c" path="res://scene/items/_projectiles.tscn" id="1_h7tly"]
 [ext_resource type="Texture2D" uid="uid://bikvqyc3v74bs" path="res://assets/custom/sprites/Fireball1.png" id="2_5if13"]
+[ext_resource type="Script" path="res://script/items/fireball.gd" id="2_o6mck"]
 [ext_resource type="Texture2D" uid="uid://cgmfb7kcub6dr" path="res://assets/custom/sprites/Fireball2.png" id="3_qi3tw"]
 [ext_resource type="AudioStream" uid="uid://dl8vs7uiue0pc" path="res://assets/brackeys_platformer_assets/sounds/explosion.wav" id="4_b40b6"]
+[ext_resource type="PackedScene" uid="uid://d03wu43y0frcp" path="res://scene/items/explosion_particles.tscn" id="5_ipyw0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_joyfm"]
 animations = [{
@@ -23,7 +25,8 @@ animations = [{
 radius = 5.0
 
 [node name="Fireball" instance=ExtResource("1_h7tly")]
-projectile_speed = 150.0
+script = ExtResource("2_o6mck")
+projectile_speed = 200.0
 shoot_axis_x = true
 
 [node name="AnimatedSprite2D" parent="." index="0"]
@@ -45,7 +48,10 @@ position = Vector2(5, 1)
 shape = SubResource("CircleShape2D_uc8bx")
 debug_color = Color(1, 0.00584033, 0.0581184, 0.42)
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="ExplosionParticles" parent="." index="4" instance=ExtResource("5_ipyw0")]
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="finished" from="ExplosionParticles" to="." method="_on_explosion_particles_finished"]
 
 [editable path="Hitbox"]

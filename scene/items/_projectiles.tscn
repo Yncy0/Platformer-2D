@@ -16,3 +16,5 @@ one_shot = true
 autostart = true
 
 [node name="Hitbox" parent="." instance=ExtResource("1_0gopp")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
