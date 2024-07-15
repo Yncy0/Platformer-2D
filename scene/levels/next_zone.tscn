@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c8lm701rngi2x"]
+
+[node name="NextZone" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
