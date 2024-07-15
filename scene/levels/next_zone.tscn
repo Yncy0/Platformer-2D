@@ -109,6 +109,6 @@ shape = SubResource("RectangleShape2D_btwim")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tug4i")
 autoplay = "default"
-frame_progress = 0.973537
+frame_progress = 0.0838443
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
