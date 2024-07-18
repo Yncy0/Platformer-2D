@@ -13,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_a6nhs")
 
 [node name="Panel" type="Panel" parent="."]
+self_modulate = Color(0.0885599, 0.0885599, 0.0885599, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
