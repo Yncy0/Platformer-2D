@@ -5,6 +5,10 @@ func enter() -> void:
 	player.animated_sprite_2d.play("jump")
 
 
+func exit() -> void:
+	player.bounce_velocity = -250.0
+
+
 func update_physics_process(delta: float) -> void:
 	player.update_gravity(delta)
 	player.moving()
