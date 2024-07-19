@@ -25,6 +25,9 @@ func update_input(event: InputEvent) -> void:
 		if player.jump_available:
 			change_state.emit("JumpState")
 			#player.jump_available = false
+	
+	if event.is_action_released("move_left") or event.is_action_released("move_right"):
+		player.velocity.x = player.platform_velocity.x/10.0
 
 
 func update_physics_process(delta: float) -> void:
