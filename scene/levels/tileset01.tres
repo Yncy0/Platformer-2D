@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=21 format=3 uid="uid://b0yrhl5jscbfa"]
+[gd_resource type="TileSet" load_steps=20 format=3 uid="uid://b0yrhl5jscbfa"]
 
 [ext_resource type="Texture2D" uid="uid://5usctshlve13" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="1_hxxvy"]
 [ext_resource type="Texture2D" uid="uid://c3xomxff5cf48" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_w6o1t"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://c5fo1fx2f7wbr" path="res://scene/pickups/grapes.tscn" id="6_ws8lu"]
 [ext_resource type="PackedScene" uid="uid://hjndu3hhxfpe" path="res://scene/characters/neutral/yellow_lizard.tscn" id="7_0nj2q"]
 [ext_resource type="PackedScene" uid="uid://c55j06df32uoq" path="res://scene/characters/enemy/da_bee.tscn" id="8_00xxh"]
-[ext_resource type="PackedScene" uid="uid://cnems21jmp7ey" path="res://scene/levels/platforms/bounceshroom.tscn" id="9_upggs"]
 [ext_resource type="PackedScene" uid="uid://d0bhl4yumdcu3" path="res://scene/levels/platforms/checkpoint.tscn" id="10_0ct1s"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_62r5c"]
@@ -501,7 +500,6 @@ scenes/3/scene = ExtResource("4_nrj62")
 scenes/4/scene = ExtResource("6_ws8lu")
 scenes/5/scene = ExtResource("7_0nj2q")
 scenes/6/scene = ExtResource("8_00xxh")
-scenes/8/scene = ExtResource("9_upggs")
 scenes/9/scene = ExtResource("10_0ct1s")
 
 [resource]
