@@ -63,17 +63,22 @@ is_patroling = false
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_w12se")
 animation = &"idle"
-frame_progress = 0.940282
+frame_progress = 0.247428
 flip_h = true
 
 [node name="CollisionShape2D" parent="." index="1"]
+visible = false
 shape = SubResource("RectangleShape2D_jx7kw")
+
+[node name="Hurtbox" parent="." index="3"]
+visible = false
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource("RectangleShape2D_pwxbm")
 debug_color = Color(0.132262, 0.646493, 0, 0.42)
 
 [node name="Hitbox" parent="." index="4"]
+visible = false
 damage = 1.0
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]

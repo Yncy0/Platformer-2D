@@ -1,0 +1,94 @@
+[gd_scene load_steps=12 format=3 uid="uid://wuvgtrudu1v3"]
+
+[ext_resource type="PackedScene" uid="uid://b4gchwqhmg74j" path="res://scene/characters/enemy/_ariborne_enemy.tscn" id="1_4iv8m"]
+[ext_resource type="Script" path="res://script/characters/enemy/airborne_enemy/da_bee_flight.gd" id="2_5irc5"]
+[ext_resource type="Texture2D" uid="uid://bqlgrxxtwekn3" path="res://assets/custom/sprites/Bee.png" id="2_osd15"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jobje"]
+atlas = ExtResource("2_osd15")
+region = Rect2(96, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp812"]
+atlas = ExtResource("2_osd15")
+region = Rect2(120, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftq0a"]
+atlas = ExtResource("2_osd15")
+region = Rect2(144, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkhog"]
+atlas = ExtResource("2_osd15")
+region = Rect2(168, 48, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iq5wq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jobje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yp812")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftq0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkhog")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6a3s"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pwah"]
+size = Vector2(10, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3fow"]
+size = Vector2(18, 3)
+
+[node name="DaBeeFlight" instance=ExtResource("1_4iv8m")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("2_5irc5")
+SPEED = 50.0
+is_patroling = true
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_iq5wq")
+autoplay = "default"
+frame_progress = 0.700999
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
+shape = SubResource("RectangleShape2D_r6a3s")
+
+[node name="Hurtbox" parent="." index="3"]
+visible = false
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_7pwah")
+debug_color = Color(0, 0.648884, 0.16532, 0.42)
+
+[node name="Hitbox" parent="." index="4"]
+visible = false
+damage = 1.0
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_g3fow")
+debug_color = Color(0.982201, 0, 0.36431, 0.42)
+
+[node name="ProjectileSpawn" type="Node2D" parent="." index="5"]
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="6"]
+target_position = Vector2(0, 500)
+collision_mask = 2
+
+[node name="ShootTimer" type="Timer" parent="." index="7"]
+
+[editable path="Hurtbox"]
+[editable path="Hitbox"]
