@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4gchwqhmg74j"]
 
 [ext_resource type="PackedScene" uid="uid://buvvmbfjfuhxv" path="res://scene/characters/enemy/_enemy.tscn" id="1_1352g"]
-[ext_resource type="Script" path="res://script/characters/enemy/airborne_enemy/_ariborne_enemy.gd" id="2_niv3o"]
+[ext_resource type="Script" uid="uid://bbhltqdj8elwy" path="res://script/characters/enemy/airborne_enemy/_ariborne_enemy.gd" id="2_niv3o"]
 
 [node name="AriborneEnemy" instance=ExtResource("1_1352g")]
 script = ExtResource("2_niv3o")

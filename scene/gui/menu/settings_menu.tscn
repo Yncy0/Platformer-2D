@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvqvfg8nxu114"]
 
 [ext_resource type="FontFile" uid="uid://dmb0vqloyhf3f" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="1_0mj4u"]
-[ext_resource type="Script" path="res://script/gui/menu/settings_menu.gd" id="1_bd2fq"]
+[ext_resource type="Script" uid="uid://vxtye3vw5iw3" path="res://script/gui/menu/settings_menu.gd" id="1_bd2fq"]
 [ext_resource type="PackedScene" uid="uid://c5l1ttky5e5fx" path="res://scene/gui/menu/volume_slider.tscn" id="2_4tlt0"]
 
 [node name="SettingsMenu" type="Control"]

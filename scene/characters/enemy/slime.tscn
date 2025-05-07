@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c1we2whqy5r26" path="res://scene/characters/enemy/_grounded_enemy.tscn" id="1_2yn2r"]
 [ext_resource type="Texture2D" uid="uid://c7llwb5hvy6il" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="2_fcko2"]
-[ext_resource type="Script" path="res://script/characters/enemy/grounded_enemy/_grounded_enemy.gd" id="2_l7wls"]
-[ext_resource type="Script" path="res://script/items/explosion_particles.gd" id="4_a6kna"]
+[ext_resource type="Script" uid="uid://bqbxrirhy8qgj" path="res://script/characters/enemy/grounded_enemy/_grounded_enemy.gd" id="2_l7wls"]
+[ext_resource type="Script" uid="uid://c6hc6og6ih7bj" path="res://script/items/explosion_particles.gd" id="4_a6kna"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_psb2w"]
 atlas = ExtResource("2_fcko2")
@@ -221,8 +221,8 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dwcoa"]
 _data = {
-"RESET": SubResource("Animation_843pv"),
-"dead": SubResource("Animation_8ftwi")
+&"RESET": SubResource("Animation_843pv"),
+&"dead": SubResource("Animation_8ftwi")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cuovw"]

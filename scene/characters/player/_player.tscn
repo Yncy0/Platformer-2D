@@ -1,15 +1,15 @@
 [gd_scene load_steps=56 format=3 uid="uid://beqmqsni2pina"]
 
 [ext_resource type="Texture2D" uid="uid://df7ku1wr285ub" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="2_ej0vx"]
-[ext_resource type="Script" path="res://script/characters/player/_player.gd" id="2_qe20h"]
-[ext_resource type="Script" path="res://script/states/state_machine.gd" id="3_dex0x"]
+[ext_resource type="Script" uid="uid://cpd38ky5rsell" path="res://script/characters/player/_player.gd" id="2_qe20h"]
+[ext_resource type="Script" uid="uid://ddssotdr0ml14" path="res://script/states/state_machine.gd" id="3_dex0x"]
 [ext_resource type="PackedScene" uid="uid://df3h85gd4vu2a" path="res://scene/components/hitbox.tscn" id="4_pbh47"]
-[ext_resource type="Script" path="res://script/characters/player/idle.gd" id="4_wtok8"]
-[ext_resource type="Script" path="res://script/characters/player/move.gd" id="5_of2ut"]
-[ext_resource type="Script" path="res://script/characters/player/jump.gd" id="5_w4wrq"]
-[ext_resource type="Script" path="res://script/characters/player/fall.gd" id="6_eelx4"]
-[ext_resource type="Script" path="res://script/characters/player/hit.gd" id="7_woqvh"]
-[ext_resource type="Script" path="res://script/characters/player/bounce.gd" id="8_00anp"]
+[ext_resource type="Script" uid="uid://do4l33j5mf886" path="res://script/characters/player/idle.gd" id="4_wtok8"]
+[ext_resource type="Script" uid="uid://ckkere211lfru" path="res://script/characters/player/move.gd" id="5_of2ut"]
+[ext_resource type="Script" uid="uid://ccdi1plh1kyoo" path="res://script/characters/player/jump.gd" id="5_w4wrq"]
+[ext_resource type="Script" uid="uid://daic7exnc35k8" path="res://script/characters/player/fall.gd" id="6_eelx4"]
+[ext_resource type="Script" uid="uid://c7upqj0sntrm1" path="res://script/characters/player/hit.gd" id="7_woqvh"]
+[ext_resource type="Script" uid="uid://dj81hkjl6871u" path="res://script/characters/player/bounce.gd" id="8_00anp"]
 [ext_resource type="PackedScene" uid="uid://haxrple0mnhl" path="res://scene/components/hurtbox.tscn" id="9_34f5u"]
 [ext_resource type="AudioStream" uid="uid://da6xb4qwl2gj5" path="res://assets/brackeys_platformer_assets/sounds/jump.wav" id="9_a0wlx"]
 [ext_resource type="AudioStream" uid="uid://dsgb8mdl0uyxq" path="res://assets/brackeys_platformer_assets/sounds/hurt.wav" id="10_hbpb7"]
@@ -369,11 +369,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1a286"]
 _data = {
-"RESET": SubResource("Animation_vmewr"),
-"death": SubResource("Animation_ien45"),
-"hit": SubResource("Animation_udwmv"),
-"mount": SubResource("Animation_m4uab"),
-"unmount": SubResource("Animation_76lve")
+&"RESET": SubResource("Animation_vmewr"),
+&"death": SubResource("Animation_ien45"),
+&"hit": SubResource("Animation_udwmv"),
+&"mount": SubResource("Animation_m4uab"),
+&"unmount": SubResource("Animation_76lve")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dseq4"]
@@ -442,7 +442,7 @@ metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_1a286")
+&"": SubResource("AnimationLibrary_1a286")
 }
 
 [node name="MountSpawn" type="Node2D" parent="."]

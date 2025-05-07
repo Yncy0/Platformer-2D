@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://c41tgwcyem62e"]
 
 [ext_resource type="PackedScene" uid="uid://buy5lisiipvtj" path="res://scene/pickups/_pickups.tscn" id="1_dpkgy"]
-[ext_resource type="Script" path="res://script/pickups/coins.gd" id="2_6crpk"]
+[ext_resource type="Script" uid="uid://bhygko6jo4osw" path="res://script/pickups/coins.gd" id="2_6crpk"]
 [ext_resource type="Texture2D" uid="uid://2w5yi2f862wy" path="res://assets/brackeys_platformer_assets/sprites/coin.png" id="2_8rku0"]
 [ext_resource type="AudioStream" uid="uid://b62si2286qkkv" path="res://assets/brackeys_platformer_assets/sounds/coin.wav" id="3_jmksx"]
 

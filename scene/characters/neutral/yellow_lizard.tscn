@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cmq51ban55wi4" path="res://scene/characters/_entity.tscn" id="1_7d1oi"]
 [ext_resource type="Texture2D" uid="uid://c6gd4bcgl7se" path="res://assets/custom/sprites/DinoSprites - tard.png" id="2_7r0af"]
-[ext_resource type="Script" path="res://script/characters/neutral/yellow_lizard.gd" id="2_wugfj"]
+[ext_resource type="Script" uid="uid://dk6pkl5ygpyr" path="res://script/characters/neutral/yellow_lizard.gd" id="2_wugfj"]
 [ext_resource type="PackedScene" uid="uid://c5ryfsc2farxe" path="res://scene/components/mount_area.tscn" id="3_yg8q5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0rfms"]

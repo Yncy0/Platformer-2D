@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dcxqrvbuevsq3"]
 
-[ext_resource type="Script" path="res://script/levels/loading_screen.gd" id="1_a6nhs"]
+[ext_resource type="Script" uid="uid://cn68kuy1me8sj" path="res://script/levels/loading_screen.gd" id="1_a6nhs"]
 [ext_resource type="FontFile" uid="uid://dmb0vqloyhf3f" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="1_iiu2u"]
 
 [node name="LoadingScreen" type="Control"]

@@ -95,8 +95,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hs7ts"]
 _data = {
-"RESET": SubResource("Animation_7btb4"),
-"pickup": SubResource("Animation_i61gx")
+&"RESET": SubResource("Animation_7btb4"),
+&"pickup": SubResource("Animation_i61gx")
 }
 
 [node name="Pickups" type="Area2D"]

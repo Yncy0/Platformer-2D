@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://c55j06df32uoq"]
 
 [ext_resource type="PackedScene" uid="uid://b4gchwqhmg74j" path="res://scene/characters/enemy/_ariborne_enemy.tscn" id="1_uulgt"]
-[ext_resource type="Script" path="res://script/characters/enemy/airborne_enemy/da_bee.gd" id="2_v6rom"]
+[ext_resource type="Script" uid="uid://uemmi0kfx0os" path="res://script/characters/enemy/airborne_enemy/da_bee.gd" id="2_v6rom"]
 [ext_resource type="Texture2D" uid="uid://bqlgrxxtwekn3" path="res://assets/custom/sprites/Bee.png" id="3_bclmx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mgutm"]

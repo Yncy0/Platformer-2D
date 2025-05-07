@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://buvvmbfjfuhxv" path="res://scene/characters/enemy/_enemy.tscn" id="1_ajf05"]
 [ext_resource type="AudioStream" uid="uid://dsgb8mdl0uyxq" path="res://assets/brackeys_platformer_assets/sounds/hurt.wav" id="3_djbl7"]
-[ext_resource type="Script" path="res://script/components/health_component.gd" id="3_ibye6"]
+[ext_resource type="Script" uid="uid://cjouvbulmg7fq" path="res://script/components/health_component.gd" id="3_ibye6"]
 
 [sub_resource type="GDScript" id="GDScript_371jp"]
 script/source = "extends CharacterBody2D

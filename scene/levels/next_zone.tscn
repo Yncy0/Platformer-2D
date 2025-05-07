@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://c8lm701rngi2x"]
 
 [ext_resource type="Texture2D" uid="uid://7qxhq0u7sei1" path="res://assets/custom/sprites/Balloon_1.png" id="1_lyq5u"]
-[ext_resource type="Script" path="res://script/levels/next_zone.gd" id="1_mr0c1"]
+[ext_resource type="Script" uid="uid://dqhhcawqen1ww" path="res://script/levels/next_zone.gd" id="1_mr0c1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_btwim"]
 size = Vector2(16, 27)

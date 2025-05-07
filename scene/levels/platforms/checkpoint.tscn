@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0bhl4yumdcu3"]
 
-[ext_resource type="Script" path="res://script/levels/checkpoint.gd" id="1_md1wn"]
-[ext_resource type="Script" path="res://script/items/explosion_particles.gd" id="2_h7pnj"]
+[ext_resource type="Script" uid="uid://17oryys8s6ds" path="res://script/levels/checkpoint.gd" id="1_md1wn"]
+[ext_resource type="Script" uid="uid://c6hc6og6ih7bj" path="res://script/items/explosion_particles.gd" id="2_h7pnj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lh844"]
 size = Vector2(20, 55)

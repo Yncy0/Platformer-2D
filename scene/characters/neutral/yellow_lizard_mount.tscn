@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dvepk1rbui1en" path="res://scene/characters/neutral/_mounts.tscn" id="1_7288i"]
 [ext_resource type="Texture2D" uid="uid://c6gd4bcgl7se" path="res://assets/custom/sprites/DinoSprites - tard.png" id="2_n45tc"]
-[ext_resource type="Script" path="res://script/characters/neutral/yellow_lizard_mount.gd" id="3_4ebk0"]
+[ext_resource type="Script" uid="uid://c1fdjqcjpxhxn" path="res://script/characters/neutral/yellow_lizard_mount.gd" id="3_4ebk0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xu5jv"]
 atlas = ExtResource("2_n45tc")

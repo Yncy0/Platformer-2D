@@ -43,8 +43,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wk23q"]
 _data = {
-"RESET": SubResource("Animation_yewij"),
-"move": SubResource("Animation_1wjme")
+&"RESET": SubResource("Animation_yewij"),
+&"move": SubResource("Animation_1wjme")
 }
 
 [sub_resource type="Animation" id="Animation_rlfw4"]
@@ -81,8 +81,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lxw8n"]
 _data = {
-"RESET": SubResource("Animation_rlfw4"),
-"move": SubResource("Animation_jmsac")
+&"RESET": SubResource("Animation_rlfw4"),
+&"move": SubResource("Animation_jmsac")
 }
 
 [sub_resource type="Animation" id="Animation_1dys8"]
@@ -119,8 +119,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q0lg1"]
 _data = {
-"RESET": SubResource("Animation_1dys8"),
-"move": SubResource("Animation_fmm2i")
+&"RESET": SubResource("Animation_1dys8"),
+&"move": SubResource("Animation_fmm2i")
 }
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2aesv"]

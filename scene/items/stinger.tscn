@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dvo3bdc1h751c" path="res://scene/items/_projectiles.tscn" id="1_nf48x"]
 [ext_resource type="Texture2D" uid="uid://dgy82deg2dyr1" path="res://assets/custom/sprites/Stinger.png" id="2_5pny2"]
-[ext_resource type="Script" path="res://script/items/stinger.gd" id="2_i855w"]
+[ext_resource type="Script" uid="uid://d0h3vsccy6jcx" path="res://script/items/stinger.gd" id="2_i855w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_458lr"]
 animations = [{

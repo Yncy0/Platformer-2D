@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c43rjcqowbetk"]
 
-[ext_resource type="Script" path="res://script/gui/menu/starting_menu.gd" id="1_khvbr"]
+[ext_resource type="Script" uid="uid://87e2seoft6j0" path="res://script/gui/menu/starting_menu.gd" id="1_khvbr"]
 [ext_resource type="TileSet" uid="uid://b0yrhl5jscbfa" path="res://scene/levels/tileset01.tres" id="1_pif5q"]
 [ext_resource type="Texture2D" uid="uid://df7ku1wr285ub" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="2_tsh5v"]
 [ext_resource type="FontFile" uid="uid://dmb0vqloyhf3f" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="5_bqo82"]

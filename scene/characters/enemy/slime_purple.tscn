@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://dwn1ecr6pr2cg"]
 
 [ext_resource type="PackedScene" uid="uid://c1we2whqy5r26" path="res://scene/characters/enemy/_grounded_enemy.tscn" id="1_dr3a1"]
-[ext_resource type="Script" path="res://script/characters/enemy/grounded_enemy/_grounded_enemy.gd" id="2_86cl3"]
+[ext_resource type="Script" uid="uid://bqbxrirhy8qgj" path="res://script/characters/enemy/grounded_enemy/_grounded_enemy.gd" id="2_86cl3"]
 [ext_resource type="Texture2D" uid="uid://5mmwde0lm4ci" path="res://assets/brackeys_platformer_assets/sprites/slime_purple.png" id="2_rl1u2"]
 [ext_resource type="PackedScene" uid="uid://d03wu43y0frcp" path="res://scene/items/explosion_particles.tscn" id="4_3e2q8"]
 
@@ -221,8 +221,8 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_py5ou"]
 _data = {
-"RESET": SubResource("Animation_80ynq"),
-"dead": SubResource("Animation_8dhhp")
+&"RESET": SubResource("Animation_80ynq"),
+&"dead": SubResource("Animation_8dhhp")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1al3o"]

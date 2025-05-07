@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cy5n63m5wv4n2"]
 
-[ext_resource type="Script" path="res://script/gui/menu/pause_menu.gd" id="1_cfb86"]
+[ext_resource type="Script" uid="uid://c1inngk4r8s8q" path="res://script/gui/menu/pause_menu.gd" id="1_cfb86"]
 [ext_resource type="FontFile" uid="uid://dmb0vqloyhf3f" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="1_rkwso"]
 [ext_resource type="PackedScene" uid="uid://dvqvfg8nxu114" path="res://scene/gui/menu/settings_menu.tscn" id="2_00yht"]
 
